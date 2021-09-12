@@ -10,7 +10,7 @@ namespace EqCard.Models
 {
 	class EqCardContext: DbContext
 	{
-      public EqCardContext() : base("EqCardDB")
+      public EqCardContext() : base("MyConnString")
       {
          Database.SetInitializer<EqCardContext>(new DropCreateDatabaseIfModelChanges<EqCardContext>());
       }

@@ -15,5 +15,9 @@ namespace EqCard.Models
 
 		public int LocationId { get; set; }
 		public Location Location { get; set; }
+
+
+
+
 	}
 }

@@ -18,6 +18,12 @@ namespace EqCard.Models
 
 
 
+		// список запчастей оборудования
+		public List<Spare> Spares { get; set; } 
+		public Equipment()
+		{
+			Spares = new List<Spare>();
+		}
 
 	}
 }

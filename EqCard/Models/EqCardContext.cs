@@ -12,7 +12,8 @@ namespace EqCard.Models
 	{
       public EqCardContext() : base("MyConnString")
       {
-         Database.SetInitializer<EqCardContext>(new DropCreateDatabaseIfModelChanges<EqCardContext>());
+         //Database.SetInitializer<EqCardContext>(new DropCreateDatabaseIfModelChanges<EqCardContext>());
+         Database.SetInitializer<EqCardContext>(new MyInitializer());
       }
       public virtual DbSet<Equipment> Equipments { get; set; }
       public virtual DbSet<Location> Locations { get; set; }

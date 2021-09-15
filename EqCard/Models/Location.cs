@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace EqCard.Models
 {
+	//_____________________________________Расположение оборудования
 	class Location
 	{
-		//_____________________________________Расположение
 		public int Id { get; set; }
 		public string LocationName { get; set; }
+		public string LocationComment { get; set; }
 		public List<Equipment> Equipment { get; set; }
 
 

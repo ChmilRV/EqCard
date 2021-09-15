@@ -16,20 +16,91 @@ namespace EqCard
 		public Form1()
 		{
 			InitializeComponent();
+
+
+			dataGridView_EqRepairRecord.AutoGenerateColumns = true;
+			dataGridView_EqRepairRecord.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+			dataGridView_EqRepairRecord.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+			dataGridView_Location.AutoGenerateColumns = true;
+			dataGridView_Location.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+			dataGridView_Location.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+			dataGridView_Equipment.AutoGenerateColumns = true;
+			dataGridView_Equipment.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+			dataGridView_Equipment.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+			dataGridView_Spare.AutoGenerateColumns = true;
+			dataGridView_Spare.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+			dataGridView_Spare.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+			dataGridView_SpareCategory.AutoGenerateColumns = true;
+			dataGridView_SpareCategory.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+			dataGridView_SpareCategory.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+			
+			
+
+
 		}
 
 		private void Form1_Load(object sender, EventArgs e)
 		{
-			GetAllLocation(dataGridView_location);
+			GetAllEqRepairRecord(dataGridView_EqRepairRecord);
+
+			GetAllLocation(dataGridView_Location);
+			GetAllEquipment(dataGridView_Equipment);
+
+			GetAllStorage(dataGridView_Spare);
+			GetAllSpareCategory(dataGridView_SpareCategory);
+
+			
+
 		}
 
-		private void GetAllLocation(DataGridView dataGridView_location)
+		private void GetAllEqRepairRecord(DataGridView dataGridView_EqRepairRecord)
+		{
+			using (EqCardContext ecc = new EqCardContext())
+			{
+				dataGridView_EqRepairRecord.DataSource = ecc.EqRepairRecords.ToList();
+			}
+		}
+
+		private void GetAllLocation(DataGridView dataGridView_Location)  //  получение списка расположения оборудования
 		{
          using (EqCardContext ecc = new EqCardContext())
          {
-            var locations = ecc.Locations;
-            dataGridView_location.DataSource = locations.ToList();
+            dataGridView_Location.DataSource = ecc.Locations.ToList();
          }
       }
+
+		private void GetAllEquipment(DataGridView dataGridView_Equipment)  //  получение списка оборудования
+		{
+			using (EqCardContext ecc = new EqCardContext())
+			{
+				dataGridView_Equipment.DataSource = ecc.Equipments.ToList();
+			}
+		}
+
+		private void GetAllStorage(DataGridView dataGridView_Spare)  // получение списка склада
+		{
+			using (EqCardContext ecc = new EqCardContext())
+			{
+				dataGridView_Spare.DataSource = ecc.Spares.ToList();
+			}
+		}
+
+		private void GetAllSpareCategory(DataGridView dataGridView_SpareCategory)  // получение списка категорий оборудования
+		{
+			using (EqCardContext ecc = new EqCardContext())
+			{
+				dataGridView_SpareCategory.DataSource = ecc.SpareCategories.ToList();
+			}
+		}
+
+
+
+
+
 	}
 }

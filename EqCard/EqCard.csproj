@@ -65,10 +65,12 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\EqCardContext.cs" />
+    <Compile Include="Models\EqRepairRecord.cs" />
     <Compile Include="Models\Equipment.cs" />
     <Compile Include="Models\Location.cs" />
     <Compile Include="Models\MyInitializer.cs" />
     <Compile Include="Models\Spare.cs" />
+    <Compile Include="Models\SpareCategory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\Form1.resx">

@@ -17,6 +17,11 @@ namespace EqCard.Models
       }
       public virtual DbSet<Equipment> Equipments { get; set; }
       public virtual DbSet<Location> Locations { get; set; }
+      public virtual DbSet<Spare> Spares { get; set; }
+      public virtual DbSet<SpareCategory> SpareCategories { get; set; }
+      public virtual DbSet<EqRepairRecord> EqRepairRecords { get; set; }
+
+
 
 
    }

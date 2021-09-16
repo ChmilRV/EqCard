@@ -20,7 +20,7 @@ namespace EqCard.Models
       public virtual DbSet<Spare> Spares { get; set; }
       public virtual DbSet<SpareCategory> SpareCategories { get; set; }
       public virtual DbSet<EqRepairRecord> EqRepairRecords { get; set; }
-
+      public virtual DbSet<EqRecordCard> EqRecordCards { get; set; }
 
 
 

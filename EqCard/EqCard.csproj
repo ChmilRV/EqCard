@@ -65,6 +65,7 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\EqCardContext.cs" />
+    <Compile Include="Models\EqRecordCard.cs" />
     <Compile Include="Models\EqRepairRecord.cs" />
     <Compile Include="Models\Equipment.cs" />
     <Compile Include="Models\Location.cs" />

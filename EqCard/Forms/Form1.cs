@@ -33,9 +33,7 @@ namespace EqCard
 			dataGridView_Spare.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 			dataGridView_Spare.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
-			dataGridView_SpareCategory.AutoGenerateColumns = true;
-			dataGridView_SpareCategory.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-			dataGridView_SpareCategory.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+			
 
 			
 			
@@ -51,7 +49,7 @@ namespace EqCard
 			GetAllEquipment(dataGridView_Equipment);
 
 			GetAllStorage(dataGridView_Spare);
-			GetAllSpareCategory(dataGridView_SpareCategory);
+			
 
 			
 
@@ -83,14 +81,6 @@ namespace EqCard
 			}
 		}
 
-		private void GetAllSpareCategory(DataGridView dataGridView_SpareCategory)  // получение списка категорий оборудования
-		{
-			using (EqCardContext ecc = new EqCardContext())
-			{
-				dataGridView_SpareCategory.DataSource = ecc.SpareCategories.ToList();
-			}
-		}
-
 		private void toolStripMenu_Location_Click(object sender, EventArgs e)
 		{
 			LocationForm locationForm = new LocationForm();
@@ -100,6 +90,12 @@ namespace EqCard
 		private void button_Exit_Click(object sender, EventArgs e)
 		{
 			Close();
+		}
+
+		private void toolStripMenu_SpareCategory_Click(object sender, EventArgs e)
+		{
+			SpareCategoryForm spareCategoryForm = new SpareCategoryForm();
+			spareCategoryForm.ShowDialog();
 		}
 	}
 }

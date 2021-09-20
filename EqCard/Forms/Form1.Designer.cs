@@ -35,20 +35,19 @@ namespace EqCard
 			this.tabPage_Equipment = new System.Windows.Forms.TabPage();
 			this.dataGridView_Equipment = new System.Windows.Forms.DataGridView();
 			this.tabPage_Storage = new System.Windows.Forms.TabPage();
-			this.dataGridView_SpareCategory = new System.Windows.Forms.DataGridView();
 			this.dataGridView_Spare = new System.Windows.Forms.DataGridView();
 			this.statusStrip1 = new System.Windows.Forms.StatusStrip();
 			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
 			this.toolStripMenu_Report = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenu_Edit = new System.Windows.Forms.ToolStripMenuItem();
-			this.ToolStripMenu_Storage = new System.Windows.Forms.ToolStripMenuItem();
-			this.toolStripMenuItem_About = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenu_Equipment = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripMenu_EquipmentEdit = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripMenu_Location = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenu_Spare = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenuItem_SpareEdit = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenu_SpareCategory = new System.Windows.Forms.ToolStripMenuItem();
-			this.toolStripMenu_EquipmentEdit = new System.Windows.Forms.ToolStripMenuItem();
-			this.toolStripMenu_Location = new System.Windows.Forms.ToolStripMenuItem();
+			this.ToolStripMenu_Storage = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripMenuItem_About = new System.Windows.Forms.ToolStripMenuItem();
 			this.button_Exit = new System.Windows.Forms.Button();
 			this.tabControl.SuspendLayout();
 			this.tabPage_EqRepairRecord.SuspendLayout();
@@ -56,7 +55,6 @@ namespace EqCard
 			this.tabPage_Equipment.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView_Equipment)).BeginInit();
 			this.tabPage_Storage.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView_SpareCategory)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView_Spare)).BeginInit();
 			this.menuStrip1.SuspendLayout();
 			this.SuspendLayout();
@@ -111,7 +109,6 @@ namespace EqCard
 			// 
 			// tabPage_Storage
 			// 
-			this.tabPage_Storage.Controls.Add(this.dataGridView_SpareCategory);
 			this.tabPage_Storage.Controls.Add(this.dataGridView_Spare);
 			this.tabPage_Storage.Location = new System.Drawing.Point(4, 22);
 			this.tabPage_Storage.Name = "tabPage_Storage";
@@ -120,14 +117,6 @@ namespace EqCard
 			this.tabPage_Storage.TabIndex = 1;
 			this.tabPage_Storage.Text = "Склад";
 			this.tabPage_Storage.UseVisualStyleBackColor = true;
-			// 
-			// dataGridView_SpareCategory
-			// 
-			this.dataGridView_SpareCategory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView_SpareCategory.Location = new System.Drawing.Point(634, 16);
-			this.dataGridView_SpareCategory.Name = "dataGridView_SpareCategory";
-			this.dataGridView_SpareCategory.Size = new System.Drawing.Size(516, 269);
-			this.dataGridView_SpareCategory.TabIndex = 1;
 			// 
 			// dataGridView_Spare
 			// 
@@ -173,26 +162,27 @@ namespace EqCard
 			this.toolStripMenu_Edit.Size = new System.Drawing.Size(99, 20);
 			this.toolStripMenu_Edit.Text = "Редактировать";
 			// 
-			// ToolStripMenu_Storage
-			// 
-			this.ToolStripMenu_Storage.Name = "ToolStripMenu_Storage";
-			this.ToolStripMenu_Storage.Size = new System.Drawing.Size(52, 20);
-			this.ToolStripMenu_Storage.Text = "Склад";
-			// 
-			// toolStripMenuItem_About
-			// 
-			this.toolStripMenuItem_About.Name = "toolStripMenuItem_About";
-			this.toolStripMenuItem_About.Size = new System.Drawing.Size(94, 20);
-			this.toolStripMenuItem_About.Text = "О программе";
-			// 
 			// toolStripMenu_Equipment
 			// 
 			this.toolStripMenu_Equipment.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenu_EquipmentEdit,
             this.toolStripMenu_Location});
 			this.toolStripMenu_Equipment.Name = "toolStripMenu_Equipment";
-			this.toolStripMenu_Equipment.Size = new System.Drawing.Size(180, 22);
+			this.toolStripMenu_Equipment.Size = new System.Drawing.Size(155, 22);
 			this.toolStripMenu_Equipment.Text = "Оборудование";
+			// 
+			// toolStripMenu_EquipmentEdit
+			// 
+			this.toolStripMenu_EquipmentEdit.Name = "toolStripMenu_EquipmentEdit";
+			this.toolStripMenu_EquipmentEdit.Size = new System.Drawing.Size(180, 22);
+			this.toolStripMenu_EquipmentEdit.Text = "База оборудования";
+			// 
+			// toolStripMenu_Location
+			// 
+			this.toolStripMenu_Location.Name = "toolStripMenu_Location";
+			this.toolStripMenu_Location.Size = new System.Drawing.Size(180, 22);
+			this.toolStripMenu_Location.Text = "Расположение";
+			this.toolStripMenu_Location.Click += new System.EventHandler(this.toolStripMenu_Location_Click);
 			// 
 			// toolStripMenu_Spare
 			// 
@@ -214,19 +204,19 @@ namespace EqCard
 			this.toolStripMenu_SpareCategory.Name = "toolStripMenu_SpareCategory";
 			this.toolStripMenu_SpareCategory.Size = new System.Drawing.Size(189, 22);
 			this.toolStripMenu_SpareCategory.Text = "Категории запчастей";
+			this.toolStripMenu_SpareCategory.Click += new System.EventHandler(this.toolStripMenu_SpareCategory_Click);
 			// 
-			// toolStripMenu_EquipmentEdit
+			// ToolStripMenu_Storage
 			// 
-			this.toolStripMenu_EquipmentEdit.Name = "toolStripMenu_EquipmentEdit";
-			this.toolStripMenu_EquipmentEdit.Size = new System.Drawing.Size(180, 22);
-			this.toolStripMenu_EquipmentEdit.Text = "База оборудования";
+			this.ToolStripMenu_Storage.Name = "ToolStripMenu_Storage";
+			this.ToolStripMenu_Storage.Size = new System.Drawing.Size(52, 20);
+			this.ToolStripMenu_Storage.Text = "Склад";
 			// 
-			// toolStripMenu_Location
+			// toolStripMenuItem_About
 			// 
-			this.toolStripMenu_Location.Name = "toolStripMenu_Location";
-			this.toolStripMenu_Location.Size = new System.Drawing.Size(180, 22);
-			this.toolStripMenu_Location.Text = "Расположение";
-			this.toolStripMenu_Location.Click += new System.EventHandler(this.toolStripMenu_Location_Click);
+			this.toolStripMenuItem_About.Name = "toolStripMenuItem_About";
+			this.toolStripMenuItem_About.Size = new System.Drawing.Size(94, 20);
+			this.toolStripMenuItem_About.Text = "О программе";
 			// 
 			// button_Exit
 			// 
@@ -260,7 +250,6 @@ namespace EqCard
 			this.tabPage_Equipment.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView_Equipment)).EndInit();
 			this.tabPage_Storage.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView_SpareCategory)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView_Spare)).EndInit();
 			this.menuStrip1.ResumeLayout(false);
 			this.menuStrip1.PerformLayout();
@@ -281,7 +270,6 @@ namespace EqCard
 		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem_About;
 		private System.Windows.Forms.DataGridView dataGridView_Spare;
 		private System.Windows.Forms.DataGridView dataGridView_Equipment;
-		private System.Windows.Forms.DataGridView dataGridView_SpareCategory;
 		private System.Windows.Forms.TabPage tabPage_EqRepairRecord;
 		private System.Windows.Forms.DataGridView dataGridView_EqRepairRecord;
 		private System.Windows.Forms.ToolStripMenuItem toolStripMenu_Equipment;

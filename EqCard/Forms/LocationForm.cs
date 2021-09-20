@@ -125,11 +125,11 @@ namespace EqCard.Forms
 				Location locationForEdit = GetLocationById(Convert.ToInt32(dataGridView_Location.CurrentRow.Cells["Id"].Value));
 				using (EqCardContext ecc = new EqCardContext())
 				{
-					var locatoin = ecc.Locations
+					var location = ecc.Locations
 						.Where(l => l.Id == locationForEdit.Id)
 						.FirstOrDefault();
-					locatoin.LocationName = textBox_LocationName.Text;
-					locatoin.LocationComment = textBox_LocationComment.Text;
+					location.LocationName = textBox_LocationName.Text;
+					location.LocationComment = textBox_LocationComment.Text;
 					ecc.SaveChanges();
 					GetAllLocation(dataGridView_Location);
 					MessageBox.Show("Расположение изменено.");

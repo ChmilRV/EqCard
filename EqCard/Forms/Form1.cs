@@ -96,5 +96,10 @@ namespace EqCard
 			LocationForm locationForm = new LocationForm();
 			locationForm.ShowDialog();
 		}
+
+		private void button_Exit_Click(object sender, EventArgs e)
+		{
+			Close();
+		}
 	}
 }

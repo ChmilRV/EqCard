@@ -49,6 +49,7 @@ namespace EqCard
 			this.toolStripMenu_SpareCategory = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenu_EquipmentEdit = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenu_Location = new System.Windows.Forms.ToolStripMenuItem();
+			this.button_Exit = new System.Windows.Forms.Button();
 			this.tabControl.SuspendLayout();
 			this.tabPage_EqRepairRecord.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView_EqRepairRecord)).BeginInit();
@@ -227,11 +228,22 @@ namespace EqCard
 			this.toolStripMenu_Location.Text = "Расположение";
 			this.toolStripMenu_Location.Click += new System.EventHandler(this.toolStripMenu_Location_Click);
 			// 
+			// button_Exit
+			// 
+			this.button_Exit.Location = new System.Drawing.Point(1160, 552);
+			this.button_Exit.Name = "button_Exit";
+			this.button_Exit.Size = new System.Drawing.Size(75, 23);
+			this.button_Exit.TabIndex = 4;
+			this.button_Exit.Text = "Выход";
+			this.button_Exit.UseVisualStyleBackColor = true;
+			this.button_Exit.Click += new System.EventHandler(this.button_Exit_Click);
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1264, 601);
+			this.Controls.Add(this.button_Exit);
 			this.Controls.Add(this.statusStrip1);
 			this.Controls.Add(this.menuStrip1);
 			this.Controls.Add(this.tabControl);
@@ -278,6 +290,7 @@ namespace EqCard
 		private System.Windows.Forms.ToolStripMenuItem toolStripMenu_Spare;
 		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem_SpareEdit;
 		private System.Windows.Forms.ToolStripMenuItem toolStripMenu_SpareCategory;
+		private System.Windows.Forms.Button button_Exit;
 	}
 }
 

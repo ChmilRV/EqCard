@@ -1,4 +1,5 @@
-﻿using EqCard.Models;
+﻿using EqCard.Forms;
+using EqCard.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,9 +23,7 @@ namespace EqCard
 			dataGridView_EqRepairRecord.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 			dataGridView_EqRepairRecord.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
-			dataGridView_Location.AutoGenerateColumns = true;
-			dataGridView_Location.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-			dataGridView_Location.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+			
 
 			dataGridView_Equipment.AutoGenerateColumns = true;
 			dataGridView_Equipment.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -48,7 +47,7 @@ namespace EqCard
 		{
 			GetAllEqRepairRecord(dataGridView_EqRepairRecord);
 
-			GetAllLocation(dataGridView_Location);
+			
 			GetAllEquipment(dataGridView_Equipment);
 
 			GetAllStorage(dataGridView_Spare);
@@ -66,13 +65,7 @@ namespace EqCard
 			}
 		}
 
-		private void GetAllLocation(DataGridView dataGridView_Location)  //  получение списка расположения оборудования
-		{
-         using (EqCardContext ecc = new EqCardContext())
-         {
-            dataGridView_Location.DataSource = ecc.Locations.ToList();
-         }
-      }
+		
 
 		private void GetAllEquipment(DataGridView dataGridView_Equipment)  //  получение списка оборудования
 		{
@@ -98,9 +91,10 @@ namespace EqCard
 			}
 		}
 
-
-
-
-
+		private void toolStripMenu_Location_Click(object sender, EventArgs e)
+		{
+			LocationForm locationForm = new LocationForm();
+			locationForm.ShowDialog();
+		}
 	}
 }

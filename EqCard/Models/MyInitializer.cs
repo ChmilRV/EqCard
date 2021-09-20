@@ -3,7 +3,7 @@ using System.Data.Entity;
 
 namespace EqCard.Models
 {
-   internal class MyInitializer :  DropCreateDatabaseAlways<EqCardContext>  //DropCreateDatabaseIfModelChanges<EqCardContext>
+   internal class MyInitializer : DropCreateDatabaseIfModelChanges<EqCardContext> //DropCreateDatabaseAlways<EqCardContext>
    {
       protected override void Seed(EqCardContext context)
       {

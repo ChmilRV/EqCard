@@ -112,7 +112,25 @@ namespace EqCard.Forms
 
 		private void button_SpareEdit_Click(object sender, EventArgs e)
 		{
-
+			if (dataGridView_Spare.SelectedRows.Count>0)
+			{
+				Spare spareForEdit = GetSpareById(Convert.ToInt32(dataGridView_Spare.CurrentRow.Cells["Id"].Value));
+				using (EqCardContext ecc = new EqCardContext())
+				{
+					var spare = ecc.Spares.Where(sc => sc.Id == spareForEdit.Id).FirstOrDefault();
+					spare.SpareName = textBox_SpareName.Text;
+					spare.NumberInStorage = (int)numericUpDown_SpareInStorage.Value;
+					spare.SpareComment = textBox_SpareComment.Text;
+					spare.SpareCategoryId = GetSpareCategoryIdByName(comboBox_SpareCategory.SelectedItem.ToString());
+					ecc.SaveChanges();
+					GetAllSpare(dataGridView_Spare);
+					MessageBox.Show("Запасная часть изменена.");
+				}
+				textBox_SpareName.Text = string.Empty;
+				comboBox_SpareCategory.SelectedIndex = -1;
+				numericUpDown_SpareInStorage.Value = 0;
+				textBox_SpareComment.Text = string.Empty;
+			}
 		}
 
 		private void button_SpareDelete_Click(object sender, EventArgs e)

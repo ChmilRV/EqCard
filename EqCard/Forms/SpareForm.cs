@@ -135,7 +135,25 @@ namespace EqCard.Forms
 
 		private void button_SpareDelete_Click(object sender, EventArgs e)
 		{
-
+			if (dataGridView_Spare.SelectedRows.Count>0)
+			{
+				Spare spareForDelete = GetSpareById(Convert.ToInt32(dataGridView_Spare.CurrentRow.Cells["Id"].Value));
+				using (EqCardContext ecc = new EqCardContext())
+				{
+					var spare = ecc.Spares.Where(s => s.SpareName == spareForDelete.SpareName && s.SpareCategoryId == spareForDelete.SpareCategoryId).FirstOrDefault();
+					if (spare!=null)
+					{
+						ecc.Spares.Remove(spare);
+						ecc.SaveChanges();
+						GetAllSpare(dataGridView_Spare);
+						MessageBox.Show("Запасная часть удалена.");
+					}
+					textBox_SpareName.Text = string.Empty;
+					comboBox_SpareCategory.SelectedIndex = -1;
+					numericUpDown_SpareInStorage.Value = 0;
+					textBox_SpareComment.Text = string.Empty;
+				}
+			}
 		}
 
 		private void button_SpareExit_Click(object sender, EventArgs e)

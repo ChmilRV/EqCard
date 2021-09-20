@@ -13,7 +13,6 @@ namespace EqCard.Models
 		public string SpareName { get; set; }
 		public string SpareComment { get; set; }
 		public int NumberInStorage { get; set; }  // количество в складе
-
 		public int SpareCategoryId { get; set; }
 		public SpareCategory SpareCategories { get; set; }
 

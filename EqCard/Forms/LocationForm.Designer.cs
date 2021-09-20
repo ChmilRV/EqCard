@@ -142,6 +142,7 @@ namespace EqCard.Forms
 			this.Name = "LocationForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "LocationForm";
+			this.Load += new System.EventHandler(this.LocationForm_Load);
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView_Location)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();

@@ -20,8 +20,16 @@ namespace EqCard.Forms
 			dataGridView_Location.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 			dataGridView_Location.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 			Text = "Места расположения оборудования";
+			
+		}
+
+		private void LocationForm_Load(object sender, EventArgs e)
+		{
 			GetAllLocation(dataGridView_Location);
 		}
+
+
+
 
 
 
@@ -138,5 +146,7 @@ namespace EqCard.Forms
 				textBox_LocationComment.Text = string.Empty;
 			}
 		}
+
+		
 	}
 }

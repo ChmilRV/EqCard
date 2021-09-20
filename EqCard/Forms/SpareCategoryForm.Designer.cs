@@ -142,6 +142,7 @@ namespace EqCard.Forms
 			this.Name = "SpareCategoryForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "SpareCategoryForm";
+			this.Load += new System.EventHandler(this.SpareCategoryForm_Load);
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView_SpareCategory)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();

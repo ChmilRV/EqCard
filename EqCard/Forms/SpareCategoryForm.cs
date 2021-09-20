@@ -21,8 +21,14 @@ namespace EqCard.Forms
 			dataGridView_SpareCategory.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 			dataGridView_SpareCategory.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 			Text = "Категории запчастей";
+			
+		}
+
+		private void SpareCategoryForm_Load(object sender, EventArgs e)
+		{
 			GetAllSpareCategory(dataGridView_SpareCategory);
 		}
+
 
 		private void GetAllSpareCategory(DataGridView dataGridView_SpareCategory)  // получение списка категорий оборудования
 		{
@@ -137,5 +143,7 @@ namespace EqCard.Forms
 			textBox_SpareCategoryName.Text = spareCategoryForEdit.CategoryName;
 			textBox_SpareCategoryComment.Text = spareCategoryForEdit.SpareCategoryComment;
 		}
+
+		
 	}
 }

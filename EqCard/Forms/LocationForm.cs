@@ -56,7 +56,9 @@ namespace EqCard.Forms
 			{
 				using (EqCardContext ecc = new EqCardContext())
 				{
-					var location = ecc.Locations.Where(l => l.LocationName == textBox_LocationName.Text).FirstOrDefault();
+					var location = ecc.Locations
+						.Where(l => l.LocationName == textBox_LocationName.Text)
+						.FirstOrDefault();
 					if (location == null)
 					{
 						Location locationForAdd = new Location
@@ -84,7 +86,10 @@ namespace EqCard.Forms
 				Location locationForDelete = GetLocationById(Convert.ToInt32(dataGridView_Location.CurrentRow.Cells["Id"].Value));
 				using (EqCardContext ecc = new EqCardContext())
 				{
-					var location = ecc.Locations.Where(l => l.LocationName == locationForDelete.LocationName && l.LocationComment == locationForDelete.LocationComment).FirstOrDefault();
+					var location = ecc.Locations
+						.Where(l => l.LocationName == locationForDelete.LocationName &&
+										l.LocationComment == locationForDelete.LocationComment)
+						.FirstOrDefault();
 					if (location !=null)
 					{
 						ecc.Locations.Remove(location);
@@ -120,7 +125,9 @@ namespace EqCard.Forms
 				Location locationForEdit = GetLocationById(Convert.ToInt32(dataGridView_Location.CurrentRow.Cells["Id"].Value));
 				using (EqCardContext ecc = new EqCardContext())
 				{
-					var locatoin = ecc.Locations.Where(l => l.Id == locationForEdit.Id).FirstOrDefault();
+					var locatoin = ecc.Locations
+						.Where(l => l.Id == locationForEdit.Id)
+						.FirstOrDefault();
 					locatoin.LocationName = textBox_LocationName.Text;
 					locatoin.LocationComment = textBox_LocationComment.Text;
 					ecc.SaveChanges();

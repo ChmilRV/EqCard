@@ -23,18 +23,7 @@ namespace EqCard
 			dataGridView_EqRepairRecord.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 			dataGridView_EqRepairRecord.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
-			
 
-			dataGridView_Equipment.AutoGenerateColumns = true;
-			dataGridView_Equipment.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-			dataGridView_Equipment.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
-			
-
-			
-
-			
-			
 
 
 		}
@@ -44,7 +33,7 @@ namespace EqCard
 			GetAllEqRepairRecord(dataGridView_EqRepairRecord);
 
 			
-			GetAllEquipment(dataGridView_Equipment);
+			
 
 			//GetAllStorage(dataGridView_Spare);
 			
@@ -63,13 +52,7 @@ namespace EqCard
 
 		
 
-		private void GetAllEquipment(DataGridView dataGridView_Equipment)  //  получение списка оборудования
-		{
-			using (EqCardContext ecc = new EqCardContext())
-			{
-				dataGridView_Equipment.DataSource = ecc.Equipments.ToList();
-			}
-		}
+		
 
 		//private void GetAllStorage(DataGridView dataGridView_Spare)  // получение списка склада
 		//{
@@ -100,6 +83,12 @@ namespace EqCard
 		{
 			SpareForm spareForm = new SpareForm();
 			spareForm.ShowDialog();
+		}
+
+		private void toolStripMenu_EquipmentEdit_Click(object sender, EventArgs e)
+		{
+			EquipmentForm equipmentForm = new EquipmentForm();
+			equipmentForm.ShowDialog();
 		}
 	}
 }

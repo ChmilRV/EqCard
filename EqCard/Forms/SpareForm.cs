@@ -117,7 +117,9 @@ namespace EqCard.Forms
 				Spare spareForEdit = GetSpareById(Convert.ToInt32(dataGridView_Spare.CurrentRow.Cells["Id"].Value));
 				using (EqCardContext ecc = new EqCardContext())
 				{
-					var spare = ecc.Spares.Where(sc => sc.Id == spareForEdit.Id).FirstOrDefault();
+					var spare = ecc.Spares
+										.Where(sc => sc.Id == spareForEdit.Id)
+										.FirstOrDefault();
 					spare.SpareName = textBox_SpareName.Text;
 					spare.NumberInStorage = (int)numericUpDown_SpareInStorage.Value;
 					spare.SpareComment = textBox_SpareComment.Text;
@@ -140,7 +142,10 @@ namespace EqCard.Forms
 				Spare spareForDelete = GetSpareById(Convert.ToInt32(dataGridView_Spare.CurrentRow.Cells["Id"].Value));
 				using (EqCardContext ecc = new EqCardContext())
 				{
-					var spare = ecc.Spares.Where(s => s.SpareName == spareForDelete.SpareName && s.SpareCategoryId == spareForDelete.SpareCategoryId).FirstOrDefault();
+					var spare = ecc.Spares
+						.Where(s => s.SpareName == spareForDelete.SpareName && 
+									   s.SpareCategoryId == spareForDelete.SpareCategoryId)
+						.FirstOrDefault();
 					if (spare!=null)
 					{
 						ecc.Spares.Remove(spare);

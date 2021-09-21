@@ -33,7 +33,6 @@ namespace EqCard
 			this.tabPage_EqRepairRecord = new System.Windows.Forms.TabPage();
 			this.dataGridView_EqRepairRecord = new System.Windows.Forms.DataGridView();
 			this.tabPage_Equipment = new System.Windows.Forms.TabPage();
-			this.dataGridView_Equipment = new System.Windows.Forms.DataGridView();
 			this.tabPage_Storage = new System.Windows.Forms.TabPage();
 			this.statusStrip1 = new System.Windows.Forms.StatusStrip();
 			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -51,8 +50,6 @@ namespace EqCard
 			this.tabControl.SuspendLayout();
 			this.tabPage_EqRepairRecord.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView_EqRepairRecord)).BeginInit();
-			this.tabPage_Equipment.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView_Equipment)).BeginInit();
 			this.menuStrip1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -87,7 +84,6 @@ namespace EqCard
 			// 
 			// tabPage_Equipment
 			// 
-			this.tabPage_Equipment.Controls.Add(this.dataGridView_Equipment);
 			this.tabPage_Equipment.Location = new System.Drawing.Point(4, 22);
 			this.tabPage_Equipment.Name = "tabPage_Equipment";
 			this.tabPage_Equipment.Padding = new System.Windows.Forms.Padding(3);
@@ -95,14 +91,6 @@ namespace EqCard
 			this.tabPage_Equipment.TabIndex = 0;
 			this.tabPage_Equipment.Text = "Оборудование";
 			this.tabPage_Equipment.UseVisualStyleBackColor = true;
-			// 
-			// dataGridView_Equipment
-			// 
-			this.dataGridView_Equipment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView_Equipment.Location = new System.Drawing.Point(567, 23);
-			this.dataGridView_Equipment.Name = "dataGridView_Equipment";
-			this.dataGridView_Equipment.Size = new System.Drawing.Size(573, 290);
-			this.dataGridView_Equipment.TabIndex = 1;
 			// 
 			// tabPage_Storage
 			// 
@@ -164,6 +152,7 @@ namespace EqCard
 			this.toolStripMenu_EquipmentEdit.Name = "toolStripMenu_EquipmentEdit";
 			this.toolStripMenu_EquipmentEdit.Size = new System.Drawing.Size(180, 22);
 			this.toolStripMenu_EquipmentEdit.Text = "База оборудования";
+			this.toolStripMenu_EquipmentEdit.Click += new System.EventHandler(this.toolStripMenu_EquipmentEdit_Click);
 			// 
 			// toolStripMenu_Location
 			// 
@@ -236,8 +225,6 @@ namespace EqCard
 			this.tabControl.ResumeLayout(false);
 			this.tabPage_EqRepairRecord.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView_EqRepairRecord)).EndInit();
-			this.tabPage_Equipment.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView_Equipment)).EndInit();
 			this.menuStrip1.ResumeLayout(false);
 			this.menuStrip1.PerformLayout();
 			this.ResumeLayout(false);
@@ -255,7 +242,6 @@ namespace EqCard
 		private System.Windows.Forms.ToolStripMenuItem toolStripMenu_Edit;
 		private System.Windows.Forms.ToolStripMenuItem ToolStripMenu_Storage;
 		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem_About;
-		private System.Windows.Forms.DataGridView dataGridView_Equipment;
 		private System.Windows.Forms.TabPage tabPage_EqRepairRecord;
 		private System.Windows.Forms.DataGridView dataGridView_EqRepairRecord;
 		private System.Windows.Forms.ToolStripMenuItem toolStripMenu_Equipment;

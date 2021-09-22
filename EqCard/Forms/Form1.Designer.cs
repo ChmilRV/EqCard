@@ -30,8 +30,9 @@ namespace EqCard
 		private void InitializeComponent()
 		{
 			this.tabControl = new System.Windows.Forms.TabControl();
-			this.tabPage_EqRepairRecord = new System.Windows.Forms.TabPage();
-			this.dataGridView_EqRepairRecord = new System.Windows.Forms.DataGridView();
+			this.tabPage_EqRecordCard = new System.Windows.Forms.TabPage();
+			this.comboBox_Equipment = new System.Windows.Forms.ComboBox();
+			this.dataGridView_EqRecordCard = new System.Windows.Forms.DataGridView();
 			this.tabPage_Equipment = new System.Windows.Forms.TabPage();
 			this.tabPage_Storage = new System.Windows.Forms.TabPage();
 			this.statusStrip1 = new System.Windows.Forms.StatusStrip();
@@ -48,39 +49,50 @@ namespace EqCard
 			this.toolStripMenuItem_About = new System.Windows.Forms.ToolStripMenuItem();
 			this.button_Exit = new System.Windows.Forms.Button();
 			this.tabControl.SuspendLayout();
-			this.tabPage_EqRepairRecord.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView_EqRepairRecord)).BeginInit();
+			this.tabPage_EqRecordCard.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView_EqRecordCard)).BeginInit();
 			this.menuStrip1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// tabControl
 			// 
-			this.tabControl.Controls.Add(this.tabPage_EqRepairRecord);
+			this.tabControl.Controls.Add(this.tabPage_EqRecordCard);
 			this.tabControl.Controls.Add(this.tabPage_Equipment);
 			this.tabControl.Controls.Add(this.tabPage_Storage);
-			this.tabControl.Location = new System.Drawing.Point(0, 21);
+			this.tabControl.Location = new System.Drawing.Point(0, 24);
 			this.tabControl.Name = "tabControl";
 			this.tabControl.SelectedIndex = 0;
 			this.tabControl.Size = new System.Drawing.Size(1192, 424);
 			this.tabControl.TabIndex = 1;
 			// 
-			// tabPage_EqRepairRecord
+			// tabPage_EqRecordCard
 			// 
-			this.tabPage_EqRepairRecord.Controls.Add(this.dataGridView_EqRepairRecord);
-			this.tabPage_EqRepairRecord.Location = new System.Drawing.Point(4, 22);
-			this.tabPage_EqRepairRecord.Name = "tabPage_EqRepairRecord";
-			this.tabPage_EqRepairRecord.Size = new System.Drawing.Size(1184, 398);
-			this.tabPage_EqRepairRecord.TabIndex = 2;
-			this.tabPage_EqRepairRecord.Text = "Карточка";
-			this.tabPage_EqRepairRecord.UseVisualStyleBackColor = true;
+			this.tabPage_EqRecordCard.Controls.Add(this.comboBox_Equipment);
+			this.tabPage_EqRecordCard.Controls.Add(this.dataGridView_EqRecordCard);
+			this.tabPage_EqRecordCard.Location = new System.Drawing.Point(4, 22);
+			this.tabPage_EqRecordCard.Name = "tabPage_EqRecordCard";
+			this.tabPage_EqRecordCard.Size = new System.Drawing.Size(1184, 398);
+			this.tabPage_EqRecordCard.TabIndex = 2;
+			this.tabPage_EqRecordCard.Text = "Карточка";
+			this.tabPage_EqRecordCard.UseVisualStyleBackColor = true;
+			this.tabPage_EqRecordCard.Enter += new System.EventHandler(this.tabPage_EqRecordCard_Enter);
 			// 
-			// dataGridView_EqRepairRecord
+			// comboBox_Equipment
 			// 
-			this.dataGridView_EqRepairRecord.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView_EqRepairRecord.Location = new System.Drawing.Point(22, 22);
-			this.dataGridView_EqRepairRecord.Name = "dataGridView_EqRepairRecord";
-			this.dataGridView_EqRepairRecord.Size = new System.Drawing.Size(882, 277);
-			this.dataGridView_EqRepairRecord.TabIndex = 0;
+			this.comboBox_Equipment.FormattingEnabled = true;
+			this.comboBox_Equipment.Location = new System.Drawing.Point(64, 16);
+			this.comboBox_Equipment.Name = "comboBox_Equipment";
+			this.comboBox_Equipment.Size = new System.Drawing.Size(272, 21);
+			this.comboBox_Equipment.TabIndex = 2;
+			this.comboBox_Equipment.SelectedIndexChanged += new System.EventHandler(this.comboBox_Equipment_SelectedIndexChanged);
+			// 
+			// dataGridView_EqRecordCard
+			// 
+			this.dataGridView_EqRecordCard.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dataGridView_EqRecordCard.Location = new System.Drawing.Point(16, 80);
+			this.dataGridView_EqRecordCard.Name = "dataGridView_EqRecordCard";
+			this.dataGridView_EqRecordCard.Size = new System.Drawing.Size(882, 277);
+			this.dataGridView_EqRecordCard.TabIndex = 0;
 			// 
 			// tabPage_Equipment
 			// 
@@ -144,7 +156,7 @@ namespace EqCard
             this.toolStripMenu_EquipmentEdit,
             this.toolStripMenu_Location});
 			this.toolStripMenu_Equipment.Name = "toolStripMenu_Equipment";
-			this.toolStripMenu_Equipment.Size = new System.Drawing.Size(180, 22);
+			this.toolStripMenu_Equipment.Size = new System.Drawing.Size(155, 22);
 			this.toolStripMenu_Equipment.Text = "Оборудование";
 			// 
 			// toolStripMenu_EquipmentEdit
@@ -167,7 +179,7 @@ namespace EqCard
             this.toolStripMenuItem_SpareEdit,
             this.toolStripMenu_SpareCategory});
 			this.toolStripMenu_Spare.Name = "toolStripMenu_Spare";
-			this.toolStripMenu_Spare.Size = new System.Drawing.Size(180, 22);
+			this.toolStripMenu_Spare.Size = new System.Drawing.Size(155, 22);
 			this.toolStripMenu_Spare.Text = "Запчасти";
 			// 
 			// toolStripMenuItem_SpareEdit
@@ -198,7 +210,7 @@ namespace EqCard
 			// 
 			// button_Exit
 			// 
-			this.button_Exit.Location = new System.Drawing.Point(1160, 552);
+			this.button_Exit.Location = new System.Drawing.Point(1160, 544);
 			this.button_Exit.Name = "button_Exit";
 			this.button_Exit.Size = new System.Drawing.Size(75, 23);
 			this.button_Exit.TabIndex = 4;
@@ -221,10 +233,11 @@ namespace EqCard
 			this.Name = "Form1";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "EqCard";
+			this.Activated += new System.EventHandler(this.Form1_Activated);
 			this.Load += new System.EventHandler(this.Form1_Load);
 			this.tabControl.ResumeLayout(false);
-			this.tabPage_EqRepairRecord.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView_EqRepairRecord)).EndInit();
+			this.tabPage_EqRecordCard.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView_EqRecordCard)).EndInit();
 			this.menuStrip1.ResumeLayout(false);
 			this.menuStrip1.PerformLayout();
 			this.ResumeLayout(false);
@@ -242,8 +255,8 @@ namespace EqCard
 		private System.Windows.Forms.ToolStripMenuItem toolStripMenu_Edit;
 		private System.Windows.Forms.ToolStripMenuItem ToolStripMenu_Storage;
 		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem_About;
-		private System.Windows.Forms.TabPage tabPage_EqRepairRecord;
-		private System.Windows.Forms.DataGridView dataGridView_EqRepairRecord;
+		private System.Windows.Forms.TabPage tabPage_EqRecordCard;
+		private System.Windows.Forms.DataGridView dataGridView_EqRecordCard;
 		private System.Windows.Forms.ToolStripMenuItem toolStripMenu_Equipment;
 		private System.Windows.Forms.ToolStripMenuItem toolStripMenu_EquipmentEdit;
 		private System.Windows.Forms.ToolStripMenuItem toolStripMenu_Location;
@@ -251,6 +264,7 @@ namespace EqCard
 		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem_SpareEdit;
 		private System.Windows.Forms.ToolStripMenuItem toolStripMenu_SpareCategory;
 		private System.Windows.Forms.Button button_Exit;
+		private System.Windows.Forms.ComboBox comboBox_Equipment;
 	}
 }
 

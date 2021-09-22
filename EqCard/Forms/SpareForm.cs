@@ -80,7 +80,7 @@ namespace EqCard.Forms
 						Spare spareForAdd = new Spare
 						{
 							SpareName = textBox_SpareName.Text,
-							SpareCategoryId = GetSpareCategoryIdByName(comboBox_SpareCategory.SelectedItem.ToString()),
+							SpareCategoryId = GetSpareCategoryByName(comboBox_SpareCategory.SelectedItem.ToString()).Id,
 							NumberInStorage = (int)numericUpDown_SpareInStorage.Value,
 							SpareComment = textBox_SpareComment.Text
 						};
@@ -100,13 +100,13 @@ namespace EqCard.Forms
 			else MessageBox.Show("Введите название запасной части.");
 		}
 
-		private int GetSpareCategoryIdByName(string categoryName)
+		private SpareCategory GetSpareCategoryByName(string categoryName)
 		{
 			using (EqCardContext ecc = new EqCardContext())
 			{
 				return ecc.SpareCategories
 						 .Where(sc => sc.CategoryName == categoryName)
-						 .FirstOrDefault().Id;
+						 .FirstOrDefault();
 			}
 		}
 
@@ -123,7 +123,7 @@ namespace EqCard.Forms
 					spare.SpareName = textBox_SpareName.Text;
 					spare.NumberInStorage = (int)numericUpDown_SpareInStorage.Value;
 					spare.SpareComment = textBox_SpareComment.Text;
-					spare.SpareCategoryId = GetSpareCategoryIdByName(comboBox_SpareCategory.SelectedItem.ToString());
+					spare.SpareCategoryId = GetSpareCategoryByName(comboBox_SpareCategory.SelectedItem.ToString()).Id;
 					ecc.SaveChanges();
 					GetAllSpare(dataGridView_Spare);
 					MessageBox.Show("Запасная часть изменена.");
@@ -170,17 +170,17 @@ namespace EqCard.Forms
 		{
 			Spare spareForEdit = GetSpareById(Convert.ToInt32(dataGridView_Spare.CurrentRow.Cells["Id"].Value));
 			textBox_SpareName.Text = spareForEdit.SpareName;
-			comboBox_SpareCategory.SelectedItem = GetSpareCategoryById(spareForEdit.SpareCategoryId);
+			comboBox_SpareCategory.SelectedItem = GetSpareCategoryById(spareForEdit.SpareCategoryId).CategoryName;
 			numericUpDown_SpareInStorage.Value = spareForEdit.NumberInStorage;
 			textBox_SpareComment.Text = spareForEdit.SpareComment;
 		}
 
 
-		private object GetSpareCategoryById(int id)
+		private SpareCategory GetSpareCategoryById(int id)
 		{
 			using (EqCardContext ecc = new EqCardContext())
 			{
-				return ecc.SpareCategories.Where(sc => sc.Id == id).FirstOrDefault().CategoryName;
+				return ecc.SpareCategories.Where(sc => sc.Id == id).FirstOrDefault();
 			}
 		}
 

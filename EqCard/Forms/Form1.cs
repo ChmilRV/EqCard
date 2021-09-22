@@ -19,9 +19,9 @@ namespace EqCard
 			InitializeComponent();
 
 
-			dataGridView_EqRepairRecord.AutoGenerateColumns = true;
-			dataGridView_EqRepairRecord.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-			dataGridView_EqRepairRecord.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+			dataGridView_EqRecordCard.AutoGenerateColumns = true;
+			dataGridView_EqRecordCard.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+			dataGridView_EqRecordCard.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
 
 
@@ -30,37 +30,78 @@ namespace EqCard
 
 		private void Form1_Load(object sender, EventArgs e)
 		{
-			GetAllEqRepairRecord(dataGridView_EqRepairRecord);
-
 			
-			
-
-			//GetAllStorage(dataGridView_Spare);
+			FillEquipmentCombo();
 			
 
-			
 
 		}
 
-		private void GetAllEqRepairRecord(DataGridView dataGridView_EqRepairRecord)
+		private void Form1_Activated(object sender, EventArgs e)
 		{
+			FillEquipmentCombo();
+			
+		}
+
+		private void comboBox_Equipment_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			GetAllEqRecordCard();
+		}
+
+
+
+
+		private void GetAllEqRecordCard()
+		{
+
 			using (EqCardContext ecc = new EqCardContext())
 			{
-				dataGridView_EqRepairRecord.DataSource = ecc.EqRepairRecords.ToList();
+				var eqRecordCards = ecc.EqRecordCards
+											  .Where(erc=>erc.Equipment.EqName==comboBox_Equipment.SelectedItem.ToString())
+											  .Select(s=>new
+											  {
+												  s.Id,
+												  s.Spare.SpareName,
+												  s.SpareCount,
+												  s.EqRecordCardComment
+											  });
+
+
+				dataGridView_EqRecordCard.DataSource = eqRecordCards.ToList();
+				dataGridView_EqRecordCard.Columns[1].HeaderText = "Наименование";
+				dataGridView_EqRecordCard.Columns[2].HeaderText = "Количество";
+				dataGridView_EqRecordCard.Columns[3].HeaderText = "Примечания";
+
+
 			}
+
+
+
 		}
 
-		
-
-		
-
-		//private void GetAllStorage(DataGridView dataGridView_Spare)  // получение списка склада
+		//private string GetEquipmentByName(string eqName)
 		//{
 		//	using (EqCardContext ecc = new EqCardContext())
 		//	{
-		//		dataGridView_Spare.DataSource = ecc.Spares.ToList();
+		//		return ecc.Equipments
+		//				 .Where(eq => eq.EqName == eqName)
+		//				 .FirstOrDefault().EqName;
 		//	}
 		//}
+
+		private void FillEquipmentCombo()
+		{
+			comboBox_Equipment.Items.Clear();
+			using (EqCardContext ecc = new EqCardContext())
+			{
+				var equipments = ecc.Equipments.ToList();
+				foreach (var equipment in equipments)
+					comboBox_Equipment.Items.Add(equipment.EqName);
+			}
+		}
+
+
+
 
 		private void toolStripMenu_Location_Click(object sender, EventArgs e)
 		{
@@ -90,5 +131,14 @@ namespace EqCard
 			EquipmentForm equipmentForm = new EquipmentForm();
 			equipmentForm.ShowDialog();
 		}
+
+		
+		private void tabPage_EqRecordCard_Enter(object sender, EventArgs e)
+		{
+			FillEquipmentCombo();
+			
+		}
+
+		
 	}
 }

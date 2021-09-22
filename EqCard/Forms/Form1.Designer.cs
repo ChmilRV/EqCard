@@ -48,6 +48,7 @@ namespace EqCard
 			this.ToolStripMenu_Storage = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenuItem_About = new System.Windows.Forms.ToolStripMenuItem();
 			this.button_Exit = new System.Windows.Forms.Button();
+			this.button1 = new System.Windows.Forms.Button();
 			this.tabControl.SuspendLayout();
 			this.tabPage_EqRecordCard.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView_EqRecordCard)).BeginInit();
@@ -62,16 +63,17 @@ namespace EqCard
 			this.tabControl.Location = new System.Drawing.Point(0, 24);
 			this.tabControl.Name = "tabControl";
 			this.tabControl.SelectedIndex = 0;
-			this.tabControl.Size = new System.Drawing.Size(1192, 424);
+			this.tabControl.Size = new System.Drawing.Size(672, 424);
 			this.tabControl.TabIndex = 1;
 			// 
 			// tabPage_EqRecordCard
 			// 
+			this.tabPage_EqRecordCard.Controls.Add(this.button1);
 			this.tabPage_EqRecordCard.Controls.Add(this.comboBox_Equipment);
 			this.tabPage_EqRecordCard.Controls.Add(this.dataGridView_EqRecordCard);
 			this.tabPage_EqRecordCard.Location = new System.Drawing.Point(4, 22);
 			this.tabPage_EqRecordCard.Name = "tabPage_EqRecordCard";
-			this.tabPage_EqRecordCard.Size = new System.Drawing.Size(1184, 398);
+			this.tabPage_EqRecordCard.Size = new System.Drawing.Size(664, 398);
 			this.tabPage_EqRecordCard.TabIndex = 2;
 			this.tabPage_EqRecordCard.Text = "Карточка";
 			this.tabPage_EqRecordCard.UseVisualStyleBackColor = true;
@@ -89,9 +91,9 @@ namespace EqCard
 			// dataGridView_EqRecordCard
 			// 
 			this.dataGridView_EqRecordCard.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView_EqRecordCard.Location = new System.Drawing.Point(16, 80);
+			this.dataGridView_EqRecordCard.Location = new System.Drawing.Point(16, 48);
 			this.dataGridView_EqRecordCard.Name = "dataGridView_EqRecordCard";
-			this.dataGridView_EqRecordCard.Size = new System.Drawing.Size(882, 277);
+			this.dataGridView_EqRecordCard.Size = new System.Drawing.Size(464, 277);
 			this.dataGridView_EqRecordCard.TabIndex = 0;
 			// 
 			// tabPage_Equipment
@@ -99,7 +101,7 @@ namespace EqCard
 			this.tabPage_Equipment.Location = new System.Drawing.Point(4, 22);
 			this.tabPage_Equipment.Name = "tabPage_Equipment";
 			this.tabPage_Equipment.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage_Equipment.Size = new System.Drawing.Size(1184, 398);
+			this.tabPage_Equipment.Size = new System.Drawing.Size(664, 398);
 			this.tabPage_Equipment.TabIndex = 0;
 			this.tabPage_Equipment.Text = "Оборудование";
 			this.tabPage_Equipment.UseVisualStyleBackColor = true;
@@ -109,16 +111,16 @@ namespace EqCard
 			this.tabPage_Storage.Location = new System.Drawing.Point(4, 22);
 			this.tabPage_Storage.Name = "tabPage_Storage";
 			this.tabPage_Storage.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage_Storage.Size = new System.Drawing.Size(1184, 398);
+			this.tabPage_Storage.Size = new System.Drawing.Size(664, 398);
 			this.tabPage_Storage.TabIndex = 1;
 			this.tabPage_Storage.Text = "Склад";
 			this.tabPage_Storage.UseVisualStyleBackColor = true;
 			// 
 			// statusStrip1
 			// 
-			this.statusStrip1.Location = new System.Drawing.Point(0, 579);
+			this.statusStrip1.Location = new System.Drawing.Point(0, 539);
 			this.statusStrip1.Name = "statusStrip1";
-			this.statusStrip1.Size = new System.Drawing.Size(1264, 22);
+			this.statusStrip1.Size = new System.Drawing.Size(784, 22);
 			this.statusStrip1.TabIndex = 2;
 			this.statusStrip1.Text = "statusStrip1";
 			// 
@@ -131,7 +133,7 @@ namespace EqCard
             this.toolStripMenuItem_About});
 			this.menuStrip1.Location = new System.Drawing.Point(0, 0);
 			this.menuStrip1.Name = "menuStrip1";
-			this.menuStrip1.Size = new System.Drawing.Size(1264, 24);
+			this.menuStrip1.Size = new System.Drawing.Size(784, 24);
 			this.menuStrip1.TabIndex = 3;
 			this.menuStrip1.Text = "menuStrip1";
 			// 
@@ -210,7 +212,7 @@ namespace EqCard
 			// 
 			// button_Exit
 			// 
-			this.button_Exit.Location = new System.Drawing.Point(1160, 544);
+			this.button_Exit.Location = new System.Drawing.Point(592, 504);
 			this.button_Exit.Name = "button_Exit";
 			this.button_Exit.Size = new System.Drawing.Size(75, 23);
 			this.button_Exit.TabIndex = 4;
@@ -218,11 +220,20 @@ namespace EqCard
 			this.button_Exit.UseVisualStyleBackColor = true;
 			this.button_Exit.Click += new System.EventHandler(this.button_Exit_Click);
 			// 
+			// button1
+			// 
+			this.button1.Location = new System.Drawing.Point(560, 80);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(75, 23);
+			this.button1.TabIndex = 3;
+			this.button1.Text = "button1";
+			this.button1.UseVisualStyleBackColor = true;
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1264, 601);
+			this.ClientSize = new System.Drawing.Size(784, 561);
 			this.Controls.Add(this.button_Exit);
 			this.Controls.Add(this.statusStrip1);
 			this.Controls.Add(this.menuStrip1);
@@ -265,6 +276,7 @@ namespace EqCard
 		private System.Windows.Forms.ToolStripMenuItem toolStripMenu_SpareCategory;
 		private System.Windows.Forms.Button button_Exit;
 		private System.Windows.Forms.ComboBox comboBox_Equipment;
+		private System.Windows.Forms.Button button1;
 	}
 }
 

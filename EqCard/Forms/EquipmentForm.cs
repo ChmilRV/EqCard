@@ -85,7 +85,7 @@ namespace EqCard.Forms
 						Equipment equipmentForAdd = new Equipment
 						{
 							EqName = textBox_EqName.Text,
-							LocationId = GetLocationIdByName(comboBox_EqLocation.SelectedItem.ToString()),
+							LocationId = GetLocationByName(comboBox_EqLocation.SelectedItem.ToString()).Id,
 							EqComment = textBox_EquipmentComment.Text
 						};
 						ecc.Equipments.Add(equipmentForAdd);
@@ -103,13 +103,13 @@ namespace EqCard.Forms
 			else MessageBox.Show("Введите название оборудования.");
 		}
 
-		private int GetLocationIdByName(string locationName)
+		private Location GetLocationByName(string locationName)
 		{
 			using (EqCardContext ecc = new EqCardContext())
 			{
 				return ecc.Locations
 						 .Where(l => l.LocationName == locationName)
-						 .FirstOrDefault().Id;
+						 .FirstOrDefault();
 			}
 		}
 
@@ -123,7 +123,7 @@ namespace EqCard.Forms
 					var equipment = ecc.Equipments.Where(eq => eq.Id == equipmentForEdit.Id).FirstOrDefault();
 					equipment.EqName = textBox_EqName.Text;
 					equipment.EqComment = textBox_EquipmentComment.Text;
-					equipment.LocationId = GetLocationIdByName(comboBox_EqLocation.SelectedItem.ToString());
+					equipment.LocationId = GetLocationByName(comboBox_EqLocation.SelectedItem.ToString()).Id;
 					ecc.SaveChanges();
 					GetAllEquipment(dataGridView_Equipment);
 					MessageBox.Show("Оборудование изменено.");
@@ -138,15 +138,15 @@ namespace EqCard.Forms
 		{
 			Equipment equipmentForEdit = GetEquipmentById(Convert.ToInt32(dataGridView_Equipment.CurrentRow.Cells["Id"].Value));
 			textBox_EqName.Text = equipmentForEdit.EqName;
-			comboBox_EqLocation.SelectedItem = GetLocationById(equipmentForEdit.LocationId);
+			comboBox_EqLocation.SelectedItem = GetLocationById(equipmentForEdit.LocationId).LocationName;
 			textBox_EquipmentComment.Text = equipmentForEdit.EqComment;
 		}
 
-		private object GetLocationById(int id)
+		private Location GetLocationById(int id)
 		{
 			using (EqCardContext ecc = new EqCardContext())
 			{
-				return ecc.Locations.Where(l => l.Id == id).FirstOrDefault().LocationName;
+				return ecc.Locations.Where(l => l.Id == id).FirstOrDefault();
 			}
 		}
 

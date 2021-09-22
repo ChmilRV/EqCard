@@ -32,7 +32,7 @@ namespace EqCard
 		{
 			
 			FillEquipmentCombo();
-			
+			FillSpareCombo();
 
 
 		}
@@ -40,7 +40,19 @@ namespace EqCard
 		private void Form1_Activated(object sender, EventArgs e)
 		{
 			FillEquipmentCombo();
+			FillSpareCombo();
 			
+		}
+
+		private void FillSpareCombo()
+		{
+			comboBox_Spare.Items.Clear();
+			using (EqCardContext ecc = new EqCardContext())
+			{
+				var spares = ecc.Spares.ToList();
+				foreach (var spare in spares)
+					comboBox_Spare.Items.Add(spare.SpareName);
+			}
 		}
 
 		private void comboBox_Equipment_SelectedIndexChanged(object sender, EventArgs e)
@@ -79,15 +91,15 @@ namespace EqCard
 
 		}
 
-		//private string GetEquipmentByName(string eqName)
-		//{
-		//	using (EqCardContext ecc = new EqCardContext())
-		//	{
-		//		return ecc.Equipments
-		//				 .Where(eq => eq.EqName == eqName)
-		//				 .FirstOrDefault().EqName;
-		//	}
-		//}
+		private Equipment GetEquipmentByName(string eqName)
+		{
+			using (EqCardContext ecc = new EqCardContext())
+			{
+				return ecc.Equipments
+						 .Where(eq => eq.EqName == eqName)
+						 .FirstOrDefault();
+			}
+		}
 
 		private void FillEquipmentCombo()
 		{
@@ -139,6 +151,52 @@ namespace EqCard
 			
 		}
 
-		
+		private void button_SpareToRecCardAdd_Click(object sender, EventArgs e)
+		{
+			if (comboBox_Equipment.SelectedIndex >= 0)
+			{
+				using (EqCardContext ecc = new EqCardContext())
+				{
+					var eqRecordCard = ecc.EqRecordCards
+												 .Where(erc => erc.Spare.SpareName == comboBox_Spare.SelectedItem.ToString())
+												 .FirstOrDefault();
+					if (eqRecordCard==null)
+					{
+						EqRecordCard eqRecordCardForAdd = new EqRecordCard
+						{
+							EquipmentId = GetEquipmentByName(comboBox_Equipment.SelectedItem.ToString()).Id,
+							SpareId = GetSpareByName(comboBox_Spare.SelectedItem.ToString()).Id,
+							SpareCount = (int)numericUpDown_SpareCount.Value,
+							EqRecordCardComment = textBox_EqRecordCardComment.Text
+						};
+						ecc.EqRecordCards.Add(eqRecordCardForAdd);
+						ecc.SaveChanges();
+						GetAllEqRecordCard();
+						MessageBox.Show("Добавлена запасная часть.");
+					}
+					else MessageBox.Show("Запасная часть уже существует.");
+				}
+				comboBox_Spare.SelectedIndex = -1;
+				numericUpDown_SpareCount.Value = 0;
+				textBox_EqRecordCardComment.Text = string.Empty;
+
+
+			}
+
+
+			
+
+
+		}
+
+		private Spare GetSpareByName(string spareName)
+		{
+			using (EqCardContext ecc = new EqCardContext())
+			{
+				return ecc.Spares
+						 .Where(s => s.SpareName == spareName)
+						 .FirstOrDefault();
+			}
+		}
 	}
 }

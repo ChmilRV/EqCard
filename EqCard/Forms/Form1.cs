@@ -153,14 +153,17 @@ namespace EqCard
 
 		private void button_SpareToRecCardAdd_Click(object sender, EventArgs e)
 		{
-			if (comboBox_Equipment.SelectedIndex >= 0)
+			if (comboBox_Equipment.SelectedIndex != -1)
 			{
 				using (EqCardContext ecc = new EqCardContext())
 				{
+					int tempSpareId = GetSpareByName(comboBox_Spare.SelectedItem.ToString()).Id;
+					int tempEquipmentId = GetEquipmentByName(comboBox_Equipment.SelectedItem.ToString()).Id;
 					var eqRecordCard = ecc.EqRecordCards
-												 .Where(erc => erc.Spare.SpareName == comboBox_Spare.SelectedItem.ToString())
+												 .Where(erc => erc.SpareId == tempSpareId &&
+																	erc.EquipmentId == tempEquipmentId)
 												 .FirstOrDefault();
-					if (eqRecordCard==null)
+					if (eqRecordCard == null)
 					{
 						EqRecordCard eqRecordCardForAdd = new EqRecordCard
 						{
@@ -179,14 +182,8 @@ namespace EqCard
 				comboBox_Spare.SelectedIndex = -1;
 				numericUpDown_SpareCount.Value = 0;
 				textBox_EqRecordCardComment.Text = string.Empty;
-
-
 			}
-
-
-			
-
-
+			else MessageBox.Show("hhhhhhhhhhhhh");
 		}
 
 		private Spare GetSpareByName(string spareName)

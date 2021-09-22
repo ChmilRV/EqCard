@@ -134,6 +134,7 @@ namespace EqCard.Forms
 			this.comboBox_EqLocation.Location = new System.Drawing.Point(103, 309);
 			this.comboBox_EqLocation.Name = "comboBox_EqLocation";
 			this.comboBox_EqLocation.Size = new System.Drawing.Size(240, 21);
+			this.comboBox_EqLocation.Sorted = true;
 			this.comboBox_EqLocation.TabIndex = 32;
 			// 
 			// textBox_EqName

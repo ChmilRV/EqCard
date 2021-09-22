@@ -145,6 +145,7 @@ namespace EqCard.Forms
 			this.comboBox_SpareCategory.Location = new System.Drawing.Point(138, 273);
 			this.comboBox_SpareCategory.Name = "comboBox_SpareCategory";
 			this.comboBox_SpareCategory.Size = new System.Drawing.Size(240, 21);
+			this.comboBox_SpareCategory.Sorted = true;
 			this.comboBox_SpareCategory.TabIndex = 28;
 			// 
 			// numericUpDown_SpareInStorage

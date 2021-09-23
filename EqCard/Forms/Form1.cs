@@ -153,7 +153,7 @@ namespace EqCard
 
 		private void button_SpareToRecCardAdd_Click(object sender, EventArgs e)
 		{
-			if (comboBox_Equipment.SelectedIndex != -1)
+			if (comboBox_Equipment.SelectedItem != null)
 			{
 				using (EqCardContext ecc = new EqCardContext())
 				{

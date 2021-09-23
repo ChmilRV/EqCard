@@ -123,6 +123,7 @@ namespace EqCard
 			// 
 			// comboBox_Equipment
 			// 
+			this.comboBox_Equipment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.comboBox_Equipment.FormattingEnabled = true;
 			this.comboBox_Equipment.Location = new System.Drawing.Point(64, 16);
 			this.comboBox_Equipment.Name = "comboBox_Equipment";

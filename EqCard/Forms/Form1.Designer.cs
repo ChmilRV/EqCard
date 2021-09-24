@@ -31,14 +31,18 @@ namespace EqCard
 		{
 			this.tabControl = new System.Windows.Forms.TabControl();
 			this.tabPage_EqRecordCard = new System.Windows.Forms.TabPage();
+			this.button_SpareToRecCardEdit = new System.Windows.Forms.Button();
+			this.button_SpareToRecCardDelete = new System.Windows.Forms.Button();
+			this.label3 = new System.Windows.Forms.Label();
+			this.label2 = new System.Windows.Forms.Label();
+			this.label1 = new System.Windows.Forms.Label();
 			this.textBox_EqRecordCardComment = new System.Windows.Forms.TextBox();
 			this.numericUpDown_SpareCount = new System.Windows.Forms.NumericUpDown();
 			this.comboBox_Spare = new System.Windows.Forms.ComboBox();
 			this.button_SpareToRecCardAdd = new System.Windows.Forms.Button();
-			this.comboBox_Equipment = new System.Windows.Forms.ComboBox();
+			this.comboBox_RecordEquipment = new System.Windows.Forms.ComboBox();
 			this.dataGridView_EqRecordCard = new System.Windows.Forms.DataGridView();
-			this.tabPage_Equipment = new System.Windows.Forms.TabPage();
-			this.tabPage_Storage = new System.Windows.Forms.TabPage();
+			this.tabPage_EqRepairRecord = new System.Windows.Forms.TabPage();
 			this.statusStrip1 = new System.Windows.Forms.StatusStrip();
 			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
 			this.toolStripMenu_Report = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,23 +56,26 @@ namespace EqCard
 			this.ToolStripMenu_Storage = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenuItem_About = new System.Windows.Forms.ToolStripMenuItem();
 			this.button_Exit = new System.Windows.Forms.Button();
-			this.label1 = new System.Windows.Forms.Label();
-			this.label2 = new System.Windows.Forms.Label();
-			this.label3 = new System.Windows.Forms.Label();
-			this.button_SpareToRecCardEdit = new System.Windows.Forms.Button();
-			this.button_SpareToRecCardDelete = new System.Windows.Forms.Button();
+			this.comboBox_RepairEquipment = new System.Windows.Forms.ComboBox();
+			this.dataGridView_EqRepairRecord = new System.Windows.Forms.DataGridView();
+			this.button_RepairAdd = new System.Windows.Forms.Button();
+			this.textBox_RepairDescription = new System.Windows.Forms.TextBox();
+			this.label4 = new System.Windows.Forms.Label();
+			this.label5 = new System.Windows.Forms.Label();
+			this.textBox_RepairComment = new System.Windows.Forms.TextBox();
 			this.tabControl.SuspendLayout();
 			this.tabPage_EqRecordCard.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.numericUpDown_SpareCount)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView_EqRecordCard)).BeginInit();
+			this.tabPage_EqRepairRecord.SuspendLayout();
 			this.menuStrip1.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView_EqRepairRecord)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// tabControl
 			// 
 			this.tabControl.Controls.Add(this.tabPage_EqRecordCard);
-			this.tabControl.Controls.Add(this.tabPage_Equipment);
-			this.tabControl.Controls.Add(this.tabPage_Storage);
+			this.tabControl.Controls.Add(this.tabPage_EqRepairRecord);
 			this.tabControl.Location = new System.Drawing.Point(0, 24);
 			this.tabControl.Name = "tabControl";
 			this.tabControl.SelectedIndex = 0;
@@ -86,15 +93,62 @@ namespace EqCard
 			this.tabPage_EqRecordCard.Controls.Add(this.numericUpDown_SpareCount);
 			this.tabPage_EqRecordCard.Controls.Add(this.comboBox_Spare);
 			this.tabPage_EqRecordCard.Controls.Add(this.button_SpareToRecCardAdd);
-			this.tabPage_EqRecordCard.Controls.Add(this.comboBox_Equipment);
+			this.tabPage_EqRecordCard.Controls.Add(this.comboBox_RecordEquipment);
 			this.tabPage_EqRecordCard.Controls.Add(this.dataGridView_EqRecordCard);
 			this.tabPage_EqRecordCard.Location = new System.Drawing.Point(4, 22);
 			this.tabPage_EqRecordCard.Name = "tabPage_EqRecordCard";
 			this.tabPage_EqRecordCard.Size = new System.Drawing.Size(664, 454);
 			this.tabPage_EqRecordCard.TabIndex = 2;
-			this.tabPage_EqRecordCard.Text = "Карточка";
+			this.tabPage_EqRecordCard.Text = "Учет";
 			this.tabPage_EqRecordCard.UseVisualStyleBackColor = true;
 			this.tabPage_EqRecordCard.Enter += new System.EventHandler(this.tabPage_EqRecordCard_Enter);
+			// 
+			// button_SpareToRecCardEdit
+			// 
+			this.button_SpareToRecCardEdit.Location = new System.Drawing.Point(472, 352);
+			this.button_SpareToRecCardEdit.Name = "button_SpareToRecCardEdit";
+			this.button_SpareToRecCardEdit.Size = new System.Drawing.Size(75, 23);
+			this.button_SpareToRecCardEdit.TabIndex = 28;
+			this.button_SpareToRecCardEdit.Text = "Сохранить";
+			this.button_SpareToRecCardEdit.UseVisualStyleBackColor = true;
+			this.button_SpareToRecCardEdit.Click += new System.EventHandler(this.button_SpareToRecCardEdit_Click);
+			// 
+			// button_SpareToRecCardDelete
+			// 
+			this.button_SpareToRecCardDelete.Location = new System.Drawing.Point(472, 381);
+			this.button_SpareToRecCardDelete.Name = "button_SpareToRecCardDelete";
+			this.button_SpareToRecCardDelete.Size = new System.Drawing.Size(75, 23);
+			this.button_SpareToRecCardDelete.TabIndex = 27;
+			this.button_SpareToRecCardDelete.Text = "Удалить";
+			this.button_SpareToRecCardDelete.UseVisualStyleBackColor = true;
+			this.button_SpareToRecCardDelete.Click += new System.EventHandler(this.button_SpareToRecCardDelete_Click);
+			// 
+			// label3
+			// 
+			this.label3.AutoSize = true;
+			this.label3.Location = new System.Drawing.Point(24, 344);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(66, 13);
+			this.label3.TabIndex = 9;
+			this.label3.Text = "Количество";
+			// 
+			// label2
+			// 
+			this.label2.AutoSize = true;
+			this.label2.Location = new System.Drawing.Point(24, 384);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(70, 13);
+			this.label2.TabIndex = 8;
+			this.label2.Text = "Примечания";
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Location = new System.Drawing.Point(24, 312);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(139, 13);
+			this.label1.TabIndex = 7;
+			this.label1.Text = "Название запасной части";
 			// 
 			// textBox_EqRecordCardComment
 			// 
@@ -131,15 +185,15 @@ namespace EqCard
 			this.button_SpareToRecCardAdd.UseVisualStyleBackColor = true;
 			this.button_SpareToRecCardAdd.Click += new System.EventHandler(this.button_SpareToRecCardAdd_Click);
 			// 
-			// comboBox_Equipment
+			// comboBox_RecordEquipment
 			// 
-			this.comboBox_Equipment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.comboBox_Equipment.FormattingEnabled = true;
-			this.comboBox_Equipment.Location = new System.Drawing.Point(64, 16);
-			this.comboBox_Equipment.Name = "comboBox_Equipment";
-			this.comboBox_Equipment.Size = new System.Drawing.Size(272, 21);
-			this.comboBox_Equipment.TabIndex = 2;
-			this.comboBox_Equipment.SelectedIndexChanged += new System.EventHandler(this.comboBox_Equipment_SelectedIndexChanged);
+			this.comboBox_RecordEquipment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.comboBox_RecordEquipment.FormattingEnabled = true;
+			this.comboBox_RecordEquipment.Location = new System.Drawing.Point(64, 16);
+			this.comboBox_RecordEquipment.Name = "comboBox_RecordEquipment";
+			this.comboBox_RecordEquipment.Size = new System.Drawing.Size(272, 21);
+			this.comboBox_RecordEquipment.TabIndex = 2;
+			this.comboBox_RecordEquipment.SelectedIndexChanged += new System.EventHandler(this.comboBox_Equipment_SelectedIndexChanged);
 			// 
 			// dataGridView_EqRecordCard
 			// 
@@ -150,25 +204,23 @@ namespace EqCard
 			this.dataGridView_EqRecordCard.TabIndex = 0;
 			this.dataGridView_EqRecordCard.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_EqRecordCard_CellClick);
 			// 
-			// tabPage_Equipment
+			// tabPage_EqRepairRecord
 			// 
-			this.tabPage_Equipment.Location = new System.Drawing.Point(4, 22);
-			this.tabPage_Equipment.Name = "tabPage_Equipment";
-			this.tabPage_Equipment.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage_Equipment.Size = new System.Drawing.Size(664, 454);
-			this.tabPage_Equipment.TabIndex = 0;
-			this.tabPage_Equipment.Text = "Оборудование";
-			this.tabPage_Equipment.UseVisualStyleBackColor = true;
-			// 
-			// tabPage_Storage
-			// 
-			this.tabPage_Storage.Location = new System.Drawing.Point(4, 22);
-			this.tabPage_Storage.Name = "tabPage_Storage";
-			this.tabPage_Storage.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage_Storage.Size = new System.Drawing.Size(664, 454);
-			this.tabPage_Storage.TabIndex = 1;
-			this.tabPage_Storage.Text = "Склад";
-			this.tabPage_Storage.UseVisualStyleBackColor = true;
+			this.tabPage_EqRepairRecord.Controls.Add(this.textBox_RepairComment);
+			this.tabPage_EqRepairRecord.Controls.Add(this.label5);
+			this.tabPage_EqRepairRecord.Controls.Add(this.label4);
+			this.tabPage_EqRepairRecord.Controls.Add(this.textBox_RepairDescription);
+			this.tabPage_EqRepairRecord.Controls.Add(this.button_RepairAdd);
+			this.tabPage_EqRepairRecord.Controls.Add(this.dataGridView_EqRepairRecord);
+			this.tabPage_EqRepairRecord.Controls.Add(this.comboBox_RepairEquipment);
+			this.tabPage_EqRepairRecord.Location = new System.Drawing.Point(4, 22);
+			this.tabPage_EqRepairRecord.Name = "tabPage_EqRepairRecord";
+			this.tabPage_EqRepairRecord.Padding = new System.Windows.Forms.Padding(3);
+			this.tabPage_EqRepairRecord.Size = new System.Drawing.Size(664, 454);
+			this.tabPage_EqRepairRecord.TabIndex = 1;
+			this.tabPage_EqRepairRecord.Text = "Обслуживание";
+			this.tabPage_EqRepairRecord.UseVisualStyleBackColor = true;
+			this.tabPage_EqRepairRecord.Enter += new System.EventHandler(this.tabPage_EqRepairRecord_Enter);
 			// 
 			// statusStrip1
 			// 
@@ -212,7 +264,7 @@ namespace EqCard
             this.toolStripMenu_EquipmentEdit,
             this.toolStripMenu_Location});
 			this.toolStripMenu_Equipment.Name = "toolStripMenu_Equipment";
-			this.toolStripMenu_Equipment.Size = new System.Drawing.Size(155, 22);
+			this.toolStripMenu_Equipment.Size = new System.Drawing.Size(180, 22);
 			this.toolStripMenu_Equipment.Text = "Оборудование";
 			// 
 			// toolStripMenu_EquipmentEdit
@@ -235,7 +287,7 @@ namespace EqCard
             this.toolStripMenuItem_SpareEdit,
             this.toolStripMenu_SpareCategory});
 			this.toolStripMenu_Spare.Name = "toolStripMenu_Spare";
-			this.toolStripMenu_Spare.Size = new System.Drawing.Size(155, 22);
+			this.toolStripMenu_Spare.Size = new System.Drawing.Size(180, 22);
 			this.toolStripMenu_Spare.Text = "Запчасти";
 			// 
 			// toolStripMenuItem_SpareEdit
@@ -274,52 +326,66 @@ namespace EqCard
 			this.button_Exit.UseVisualStyleBackColor = true;
 			this.button_Exit.Click += new System.EventHandler(this.button_Exit_Click);
 			// 
-			// label1
+			// comboBox_RepairEquipment
 			// 
-			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(24, 312);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(139, 13);
-			this.label1.TabIndex = 7;
-			this.label1.Text = "Название запасной части";
+			this.comboBox_RepairEquipment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.comboBox_RepairEquipment.FormattingEnabled = true;
+			this.comboBox_RepairEquipment.Location = new System.Drawing.Point(24, 24);
+			this.comboBox_RepairEquipment.Name = "comboBox_RepairEquipment";
+			this.comboBox_RepairEquipment.Size = new System.Drawing.Size(272, 21);
+			this.comboBox_RepairEquipment.TabIndex = 3;
+			this.comboBox_RepairEquipment.SelectedIndexChanged += new System.EventHandler(this.comboBox_RepairEquipment_SelectedIndexChanged);
 			// 
-			// label2
+			// dataGridView_EqRepairRecord
 			// 
-			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(24, 384);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(70, 13);
-			this.label2.TabIndex = 8;
-			this.label2.Text = "Примечания";
+			this.dataGridView_EqRepairRecord.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dataGridView_EqRepairRecord.Location = new System.Drawing.Point(24, 56);
+			this.dataGridView_EqRepairRecord.Name = "dataGridView_EqRepairRecord";
+			this.dataGridView_EqRepairRecord.Size = new System.Drawing.Size(528, 150);
+			this.dataGridView_EqRepairRecord.TabIndex = 4;
 			// 
-			// label3
+			// button_RepairAdd
 			// 
-			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(24, 344);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(66, 13);
-			this.label3.TabIndex = 9;
-			this.label3.Text = "Количество";
+			this.button_RepairAdd.Location = new System.Drawing.Point(520, 248);
+			this.button_RepairAdd.Name = "button_RepairAdd";
+			this.button_RepairAdd.Size = new System.Drawing.Size(75, 23);
+			this.button_RepairAdd.TabIndex = 5;
+			this.button_RepairAdd.Text = "Добавить";
+			this.button_RepairAdd.UseVisualStyleBackColor = true;
 			// 
-			// button_SpareToRecCardEdit
+			// textBox_RepairDescription
 			// 
-			this.button_SpareToRecCardEdit.Location = new System.Drawing.Point(472, 352);
-			this.button_SpareToRecCardEdit.Name = "button_SpareToRecCardEdit";
-			this.button_SpareToRecCardEdit.Size = new System.Drawing.Size(75, 23);
-			this.button_SpareToRecCardEdit.TabIndex = 28;
-			this.button_SpareToRecCardEdit.Text = "Сохранить";
-			this.button_SpareToRecCardEdit.UseVisualStyleBackColor = true;
-			this.button_SpareToRecCardEdit.Click += new System.EventHandler(this.button_SpareToRecCardEdit_Click);
+			this.textBox_RepairDescription.Location = new System.Drawing.Point(144, 240);
+			this.textBox_RepairDescription.Multiline = true;
+			this.textBox_RepairDescription.Name = "textBox_RepairDescription";
+			this.textBox_RepairDescription.Size = new System.Drawing.Size(320, 88);
+			this.textBox_RepairDescription.TabIndex = 6;
 			// 
-			// button_SpareToRecCardDelete
+			// label4
 			// 
-			this.button_SpareToRecCardDelete.Location = new System.Drawing.Point(472, 381);
-			this.button_SpareToRecCardDelete.Name = "button_SpareToRecCardDelete";
-			this.button_SpareToRecCardDelete.Size = new System.Drawing.Size(75, 23);
-			this.button_SpareToRecCardDelete.TabIndex = 27;
-			this.button_SpareToRecCardDelete.Text = "Удалить";
-			this.button_SpareToRecCardDelete.UseVisualStyleBackColor = true;
-			this.button_SpareToRecCardDelete.Click += new System.EventHandler(this.button_SpareToRecCardDelete_Click);
+			this.label4.AutoSize = true;
+			this.label4.Location = new System.Drawing.Point(24, 248);
+			this.label4.Name = "label4";
+			this.label4.Size = new System.Drawing.Size(57, 13);
+			this.label4.TabIndex = 7;
+			this.label4.Text = "Описание";
+			// 
+			// label5
+			// 
+			this.label5.AutoSize = true;
+			this.label5.Location = new System.Drawing.Point(24, 368);
+			this.label5.Name = "label5";
+			this.label5.Size = new System.Drawing.Size(70, 13);
+			this.label5.TabIndex = 8;
+			this.label5.Text = "Примечания";
+			// 
+			// textBox_RepairComment
+			// 
+			this.textBox_RepairComment.Location = new System.Drawing.Point(144, 352);
+			this.textBox_RepairComment.Multiline = true;
+			this.textBox_RepairComment.Name = "textBox_RepairComment";
+			this.textBox_RepairComment.Size = new System.Drawing.Size(320, 88);
+			this.textBox_RepairComment.TabIndex = 9;
 			// 
 			// Form1
 			// 
@@ -343,8 +409,11 @@ namespace EqCard
 			this.tabPage_EqRecordCard.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.numericUpDown_SpareCount)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView_EqRecordCard)).EndInit();
+			this.tabPage_EqRepairRecord.ResumeLayout(false);
+			this.tabPage_EqRepairRecord.PerformLayout();
 			this.menuStrip1.ResumeLayout(false);
 			this.menuStrip1.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView_EqRepairRecord)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -352,8 +421,7 @@ namespace EqCard
 
 		#endregion
 		private System.Windows.Forms.TabControl tabControl;
-		private System.Windows.Forms.TabPage tabPage_Equipment;
-		private System.Windows.Forms.TabPage tabPage_Storage;
+		private System.Windows.Forms.TabPage tabPage_EqRepairRecord;
 		private System.Windows.Forms.StatusStrip statusStrip1;
 		private System.Windows.Forms.MenuStrip menuStrip1;
 		private System.Windows.Forms.ToolStripMenuItem toolStripMenu_Report;
@@ -369,7 +437,7 @@ namespace EqCard
 		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem_SpareEdit;
 		private System.Windows.Forms.ToolStripMenuItem toolStripMenu_SpareCategory;
 		private System.Windows.Forms.Button button_Exit;
-		private System.Windows.Forms.ComboBox comboBox_Equipment;
+		private System.Windows.Forms.ComboBox comboBox_RecordEquipment;
 		private System.Windows.Forms.Button button_SpareToRecCardAdd;
 		private System.Windows.Forms.ComboBox comboBox_Spare;
 		private System.Windows.Forms.TextBox textBox_EqRecordCardComment;
@@ -379,6 +447,13 @@ namespace EqCard
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Button button_SpareToRecCardEdit;
 		private System.Windows.Forms.Button button_SpareToRecCardDelete;
+		private System.Windows.Forms.ComboBox comboBox_RepairEquipment;
+		private System.Windows.Forms.Button button_RepairAdd;
+		private System.Windows.Forms.DataGridView dataGridView_EqRepairRecord;
+		private System.Windows.Forms.TextBox textBox_RepairDescription;
+		private System.Windows.Forms.TextBox textBox_RepairComment;
+		private System.Windows.Forms.Label label5;
+		private System.Windows.Forms.Label label4;
 	}
 }
 

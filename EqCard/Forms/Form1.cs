@@ -23,7 +23,13 @@ namespace EqCard
 			dataGridView_EqRecordCard.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 			dataGridView_EqRecordCard.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
+			dataGridView_EqRepairRecord.AutoGenerateColumns = true;
+			dataGridView_EqRepairRecord.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+			dataGridView_EqRepairRecord.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
+
+
+			
 
 
 		}
@@ -69,7 +75,7 @@ namespace EqCard
 			using (EqCardContext ecc = new EqCardContext())
 			{
 				var eqRecordCards = ecc.EqRecordCards
-											  .Where(erc=>erc.Equipment.EqName==comboBox_Equipment.SelectedItem.ToString())
+											  .Where(erc=>erc.Equipment.EqName==comboBox_RecordEquipment.SelectedItem.ToString())
 											  .Select(s=>new
 											  {
 												  s.Id,
@@ -103,12 +109,17 @@ namespace EqCard
 
 		private void FillEquipmentCombo()
 		{
-			comboBox_Equipment.Items.Clear();
+			comboBox_RecordEquipment.Items.Clear();
+			comboBox_RepairEquipment.Items.Clear();
 			using (EqCardContext ecc = new EqCardContext())
 			{
 				var equipments = ecc.Equipments.ToList();
 				foreach (var equipment in equipments)
-					comboBox_Equipment.Items.Add(equipment.EqName);
+				{
+					comboBox_RecordEquipment.Items.Add(equipment.EqName);
+					comboBox_RepairEquipment.Items.Add(equipment.EqName);
+				}
+					
 			}
 		}
 
@@ -153,12 +164,12 @@ namespace EqCard
 
 		private void button_SpareToRecCardAdd_Click(object sender, EventArgs e)
 		{
-			if (comboBox_Equipment.SelectedItem != null)
+			if (comboBox_RecordEquipment.SelectedItem != null)
 			{
 				using (EqCardContext ecc = new EqCardContext())
 				{
 					int tempSpareId = GetSpareByName(comboBox_Spare.SelectedItem.ToString()).Id;
-					int tempEquipmentId = GetEquipmentByName(comboBox_Equipment.SelectedItem.ToString()).Id;
+					int tempEquipmentId = GetEquipmentByName(comboBox_RecordEquipment.SelectedItem.ToString()).Id;
 					var eqRecordCard = ecc.EqRecordCards
 												 .Where(erc => erc.SpareId == tempSpareId &&
 																	erc.EquipmentId == tempEquipmentId)
@@ -167,7 +178,7 @@ namespace EqCard
 					{
 						EqRecordCard eqRecordCardForAdd = new EqRecordCard
 						{
-							EquipmentId = GetEquipmentByName(comboBox_Equipment.SelectedItem.ToString()).Id,
+							EquipmentId = GetEquipmentByName(comboBox_RecordEquipment.SelectedItem.ToString()).Id,
 							SpareId = GetSpareByName(comboBox_Spare.SelectedItem.ToString()).Id,
 							SpareCount = (int)numericUpDown_SpareCount.Value,
 							EqRecordCardComment = textBox_EqRecordCardComment.Text
@@ -198,7 +209,7 @@ namespace EqCard
 					var eqRecordCard = ecc.EqRecordCards
 												 .Where(erc => erc.Id == eqRecordCardForEdit.Id)
 												 .FirstOrDefault();
-					eqRecordCard.EquipmentId = GetEquipmentByName(comboBox_Equipment.SelectedItem.ToString()).Id;
+					eqRecordCard.EquipmentId = GetEquipmentByName(comboBox_RecordEquipment.SelectedItem.ToString()).Id;
 					eqRecordCard.SpareId = GetSpareByName(comboBox_Spare.SelectedItem.ToString()).Id;
 					eqRecordCard.SpareCount = (int)numericUpDown_SpareCount.Value;
 					eqRecordCard.EqRecordCardComment = textBox_EqRecordCardComment.Text;
@@ -206,7 +217,7 @@ namespace EqCard
 					GetAllEqRecordCard();
 					MessageBox.Show("Запись изменена.");
 				}
-				comboBox_Equipment.SelectedIndex = -1;
+				comboBox_RecordEquipment.SelectedIndex = -1;
 				comboBox_Spare.SelectedIndex = -1;
 				numericUpDown_SpareCount.Value = 0;
 				textBox_EqRecordCardComment.Text = string.Empty;
@@ -228,7 +239,7 @@ namespace EqCard
 		private void dataGridView_EqRecordCard_CellClick(object sender, DataGridViewCellEventArgs e)
 		{
 			EqRecordCard eqRecordCardForEdit = GetEqRecordCardById(Convert.ToInt32(dataGridView_EqRecordCard.CurrentRow.Cells["Id"].Value));
-			comboBox_Equipment.SelectedItem = GetEquipmentById(eqRecordCardForEdit.EquipmentId).EqName;
+			comboBox_RecordEquipment.SelectedItem = GetEquipmentById(eqRecordCardForEdit.EquipmentId).EqName;
 			comboBox_Spare.SelectedItem = GetSpareById(eqRecordCardForEdit.SpareId).SpareName;
 			numericUpDown_SpareCount.Value = eqRecordCardForEdit.SpareCount;
 			textBox_EqRecordCardComment.Text = eqRecordCardForEdit.EqRecordCardComment;
@@ -283,13 +294,47 @@ namespace EqCard
 						GetAllEqRecordCard();
 						MessageBox.Show("Запись удалена.");
 					}
-					comboBox_Equipment.SelectedIndex = -1;
+					comboBox_RecordEquipment.SelectedIndex = -1;
 					comboBox_Spare.SelectedIndex = -1;
 					numericUpDown_SpareCount.Value = 0;
 					textBox_EqRecordCardComment.Text = string.Empty;
 				}
 			}
 		}
+
+		private void tabPage_EqRepairRecord_Enter(object sender, EventArgs e)
+		{
+			FillEquipmentCombo();
+		}
+
+		private void comboBox_RepairEquipment_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			GetAllRepairRecord();
+		}
+
+		private void GetAllRepairRecord()
+		{
+			using (EqCardContext ecc = new EqCardContext())
+			{
+				var eqRepairRecords = ecc.EqRepairRecords
+											  .Where(err => err.Equipment.EqName == comboBox_RepairEquipment.SelectedItem.ToString())
+											  .Select(s => new
+											  {
+												  s.Id,
+												  s.RepairDate,
+												  s.RepairDescription,
+												  s.RepairComment
+											  });
+				dataGridView_EqRepairRecord.DataSource = eqRepairRecords.ToList();
+				dataGridView_EqRepairRecord.Columns[1].HeaderText = "Дата";
+				dataGridView_EqRepairRecord.Columns[2].HeaderText = "Описание";
+				dataGridView_EqRepairRecord.Columns[3].HeaderText = "Примечания";
+			}
+		}
+
+
+
+
 
 
 

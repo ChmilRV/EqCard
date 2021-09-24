@@ -52,6 +52,11 @@ namespace EqCard
 			this.ToolStripMenu_Storage = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenuItem_About = new System.Windows.Forms.ToolStripMenuItem();
 			this.button_Exit = new System.Windows.Forms.Button();
+			this.label1 = new System.Windows.Forms.Label();
+			this.label2 = new System.Windows.Forms.Label();
+			this.label3 = new System.Windows.Forms.Label();
+			this.button_SpareToRecCardEdit = new System.Windows.Forms.Button();
+			this.button_SpareToRecCardDelete = new System.Windows.Forms.Button();
 			this.tabControl.SuspendLayout();
 			this.tabPage_EqRecordCard.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.numericUpDown_SpareCount)).BeginInit();
@@ -72,6 +77,11 @@ namespace EqCard
 			// 
 			// tabPage_EqRecordCard
 			// 
+			this.tabPage_EqRecordCard.Controls.Add(this.button_SpareToRecCardEdit);
+			this.tabPage_EqRecordCard.Controls.Add(this.button_SpareToRecCardDelete);
+			this.tabPage_EqRecordCard.Controls.Add(this.label3);
+			this.tabPage_EqRecordCard.Controls.Add(this.label2);
+			this.tabPage_EqRecordCard.Controls.Add(this.label1);
 			this.tabPage_EqRecordCard.Controls.Add(this.textBox_EqRecordCardComment);
 			this.tabPage_EqRecordCard.Controls.Add(this.numericUpDown_SpareCount);
 			this.tabPage_EqRecordCard.Controls.Add(this.comboBox_Spare);
@@ -88,7 +98,7 @@ namespace EqCard
 			// 
 			// textBox_EqRecordCardComment
 			// 
-			this.textBox_EqRecordCardComment.Location = new System.Drawing.Point(128, 392);
+			this.textBox_EqRecordCardComment.Location = new System.Drawing.Point(200, 384);
 			this.textBox_EqRecordCardComment.Multiline = true;
 			this.textBox_EqRecordCardComment.Name = "textBox_EqRecordCardComment";
 			this.textBox_EqRecordCardComment.Size = new System.Drawing.Size(192, 32);
@@ -96,7 +106,7 @@ namespace EqCard
 			// 
 			// numericUpDown_SpareCount
 			// 
-			this.numericUpDown_SpareCount.Location = new System.Drawing.Point(128, 352);
+			this.numericUpDown_SpareCount.Location = new System.Drawing.Point(200, 344);
 			this.numericUpDown_SpareCount.Name = "numericUpDown_SpareCount";
 			this.numericUpDown_SpareCount.Size = new System.Drawing.Size(192, 20);
 			this.numericUpDown_SpareCount.TabIndex = 5;
@@ -105,7 +115,7 @@ namespace EqCard
 			// 
 			this.comboBox_Spare.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.comboBox_Spare.FormattingEnabled = true;
-			this.comboBox_Spare.Location = new System.Drawing.Point(128, 312);
+			this.comboBox_Spare.Location = new System.Drawing.Point(200, 312);
 			this.comboBox_Spare.Name = "comboBox_Spare";
 			this.comboBox_Spare.Size = new System.Drawing.Size(192, 21);
 			this.comboBox_Spare.Sorted = true;
@@ -138,6 +148,7 @@ namespace EqCard
 			this.dataGridView_EqRecordCard.Name = "dataGridView_EqRecordCard";
 			this.dataGridView_EqRecordCard.Size = new System.Drawing.Size(536, 240);
 			this.dataGridView_EqRecordCard.TabIndex = 0;
+			this.dataGridView_EqRecordCard.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_EqRecordCard_CellClick);
 			// 
 			// tabPage_Equipment
 			// 
@@ -263,6 +274,53 @@ namespace EqCard
 			this.button_Exit.UseVisualStyleBackColor = true;
 			this.button_Exit.Click += new System.EventHandler(this.button_Exit_Click);
 			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Location = new System.Drawing.Point(24, 312);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(139, 13);
+			this.label1.TabIndex = 7;
+			this.label1.Text = "Название запасной части";
+			// 
+			// label2
+			// 
+			this.label2.AutoSize = true;
+			this.label2.Location = new System.Drawing.Point(24, 384);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(70, 13);
+			this.label2.TabIndex = 8;
+			this.label2.Text = "Примечания";
+			// 
+			// label3
+			// 
+			this.label3.AutoSize = true;
+			this.label3.Location = new System.Drawing.Point(24, 344);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(66, 13);
+			this.label3.TabIndex = 9;
+			this.label3.Text = "Количество";
+			// 
+			// button_SpareToRecCardEdit
+			// 
+			this.button_SpareToRecCardEdit.Location = new System.Drawing.Point(472, 352);
+			this.button_SpareToRecCardEdit.Name = "button_SpareToRecCardEdit";
+			this.button_SpareToRecCardEdit.Size = new System.Drawing.Size(75, 23);
+			this.button_SpareToRecCardEdit.TabIndex = 28;
+			this.button_SpareToRecCardEdit.Text = "Сохранить";
+			this.button_SpareToRecCardEdit.UseVisualStyleBackColor = true;
+			this.button_SpareToRecCardEdit.Click += new System.EventHandler(this.button_SpareToRecCardEdit_Click);
+			// 
+			// button_SpareToRecCardDelete
+			// 
+			this.button_SpareToRecCardDelete.Location = new System.Drawing.Point(472, 381);
+			this.button_SpareToRecCardDelete.Name = "button_SpareToRecCardDelete";
+			this.button_SpareToRecCardDelete.Size = new System.Drawing.Size(75, 23);
+			this.button_SpareToRecCardDelete.TabIndex = 27;
+			this.button_SpareToRecCardDelete.Text = "Удалить";
+			this.button_SpareToRecCardDelete.UseVisualStyleBackColor = true;
+			this.button_SpareToRecCardDelete.Click += new System.EventHandler(this.button_SpareToRecCardDelete_Click);
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -316,6 +374,11 @@ namespace EqCard
 		private System.Windows.Forms.ComboBox comboBox_Spare;
 		private System.Windows.Forms.TextBox textBox_EqRecordCardComment;
 		private System.Windows.Forms.NumericUpDown numericUpDown_SpareCount;
+		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.Label label3;
+		private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.Button button_SpareToRecCardEdit;
+		private System.Windows.Forms.Button button_SpareToRecCardDelete;
 	}
 }
 

@@ -183,8 +183,37 @@ namespace EqCard
 				numericUpDown_SpareCount.Value = 0;
 				textBox_EqRecordCardComment.Text = string.Empty;
 			}
-			else MessageBox.Show("hhhhhhhhhhhhh");
+
 		}
+
+		
+
+		private void button_SpareToRecCardEdit_Click(object sender, EventArgs e)
+		{
+			if (dataGridView_EqRecordCard.SelectedRows.Count>0)
+			{
+				EqRecordCard eqRecordCardForEdit = GetEqRecordCardById(Convert.ToInt32(dataGridView_EqRecordCard.CurrentRow.Cells["Id"].Value));
+				using (EqCardContext ecc = new EqCardContext())
+				{
+					var eqRecordCard = ecc.EqRecordCards
+												 .Where(erc => erc.Id == eqRecordCardForEdit.Id)
+												 .FirstOrDefault();
+					eqRecordCard.EquipmentId = GetEquipmentByName(comboBox_Equipment.SelectedItem.ToString()).Id;
+					eqRecordCard.SpareId = GetSpareByName(comboBox_Spare.SelectedItem.ToString()).Id;
+					eqRecordCard.SpareCount = (int)numericUpDown_SpareCount.Value;
+					eqRecordCard.EqRecordCardComment = textBox_EqRecordCardComment.Text;
+					ecc.SaveChanges();
+					GetAllEqRecordCard();
+					MessageBox.Show("Запись изменена.");
+				}
+				comboBox_Equipment.SelectedIndex = -1;
+				comboBox_Spare.SelectedIndex = -1;
+				numericUpDown_SpareCount.Value = 0;
+				textBox_EqRecordCardComment.Text = string.Empty;
+			}
+
+		}
+
 
 		private Spare GetSpareByName(string spareName)
 		{
@@ -195,5 +224,74 @@ namespace EqCard
 						 .FirstOrDefault();
 			}
 		}
+
+		private void dataGridView_EqRecordCard_CellClick(object sender, DataGridViewCellEventArgs e)
+		{
+			EqRecordCard eqRecordCardForEdit = GetEqRecordCardById(Convert.ToInt32(dataGridView_EqRecordCard.CurrentRow.Cells["Id"].Value));
+			comboBox_Equipment.SelectedItem = GetEquipmentById(eqRecordCardForEdit.EquipmentId).EqName;
+			comboBox_Spare.SelectedItem = GetSpareById(eqRecordCardForEdit.SpareId).SpareName;
+			numericUpDown_SpareCount.Value = eqRecordCardForEdit.SpareCount;
+			textBox_EqRecordCardComment.Text = eqRecordCardForEdit.EqRecordCardComment;
+		}
+
+		private Spare GetSpareById(int id)
+		{
+			using (EqCardContext ecc = new EqCardContext())
+			{
+				return ecc.Spares
+						 .Where(s => s.Id == id)
+						 .FirstOrDefault();
+			}
+		}
+
+		private Equipment GetEquipmentById(int id)
+		{
+			using (EqCardContext ecc = new EqCardContext())
+			{
+				return ecc.Equipments
+						 .Where(eq => eq.Id == id)
+						 .FirstOrDefault();
+			}
+		}
+
+		private EqRecordCard GetEqRecordCardById(int id)
+		{
+			using (EqCardContext ecc = new EqCardContext())
+			{
+				return ecc.EqRecordCards
+						 .Where(erc => erc.Id == id)
+						 .FirstOrDefault();
+			}
+		}
+
+		private void button_SpareToRecCardDelete_Click(object sender, EventArgs e)
+		{
+			if (dataGridView_EqRecordCard.SelectedRows.Count>0)
+			{
+				EqRecordCard eqRecordCardForDelete = GetEqRecordCardById(Convert.ToInt32(dataGridView_EqRecordCard.CurrentRow.Cells["Id"].Value));
+				using (EqCardContext ecc = new EqCardContext())
+				{
+					var eqRecordCard = ecc.EqRecordCards
+												 .Where(erc => erc.EquipmentId == eqRecordCardForDelete.EquipmentId &&
+																	erc.SpareId == eqRecordCardForDelete.SpareId &&
+																	erc.SpareCount == eqRecordCardForDelete.SpareCount)
+												 .FirstOrDefault();
+					if (eqRecordCard!=null)
+					{
+						ecc.EqRecordCards.Remove(eqRecordCard);
+						ecc.SaveChanges();
+						GetAllEqRecordCard();
+						MessageBox.Show("Запись удалена.");
+					}
+					comboBox_Equipment.SelectedIndex = -1;
+					comboBox_Spare.SelectedIndex = -1;
+					numericUpDown_SpareCount.Value = 0;
+					textBox_EqRecordCardComment.Text = string.Empty;
+				}
+			}
+		}
+
+
+
 	}
 }

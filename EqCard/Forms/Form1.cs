@@ -332,9 +332,90 @@ namespace EqCard
 			}
 		}
 
+		private void button_RepairAdd_Click(object sender, EventArgs e)
+		{
+			if (comboBox_RepairEquipment.SelectedItem != null)
+			{
+				using (EqCardContext ecc = new EqCardContext())
+				{
+					EqRepairRecord eqRepairRecord = new EqRepairRecord
+					{
+						RepairDate = DateTime.Now,
+						RepairDescription = textBox_RepairDescription.Text,
+						RepairComment = textBox_RepairComment.Text,
+						EquipmentId = GetEquipmentByName(comboBox_RepairEquipment.SelectedItem.ToString()).Id
+					};
+					ecc.EqRepairRecords.Add(eqRepairRecord);
+					ecc.SaveChanges();
+					GetAllRepairRecord();
+					MessageBox.Show("Запись добавлена.");
+				}
+				textBox_RepairDescription.Text = string.Empty;
+				textBox_RepairComment.Text = string.Empty;
+			}
+		}
+
+		private void dataGridView_EqRepairRecord_CellClick(object sender, DataGridViewCellEventArgs e)
+		{
+			EqRepairRecord eqRepairRecordForEdit = GetRepairRecordById(Convert.ToInt32(dataGridView_EqRepairRecord.CurrentRow.Cells["Id"].Value));
+			comboBox_RepairEquipment.SelectedItem = GetEquipmentById(eqRepairRecordForEdit.EquipmentId).EqName;
+			textBox_RepairDescription.Text = eqRepairRecordForEdit.RepairDescription;
+			textBox_RepairComment.Text = eqRepairRecordForEdit.RepairComment;
+		}
+
+		private EqRepairRecord GetRepairRecordById(int id)
+		{
+			using (EqCardContext ecc = new EqCardContext())
+			{
+				return ecc.EqRepairRecords
+						 .Where(err => err.Id == id)
+						 .FirstOrDefault();
+			}
+		}
+
+		private void button_RepairEdit_Click(object sender, EventArgs e)
+		{
+			if (dataGridView_EqRepairRecord.SelectedRows.Count > 0)
+			{
+				EqRepairRecord eqRepairRecordForEdit = GetRepairRecordById(Convert.ToInt32(dataGridView_EqRepairRecord.CurrentRow.Cells["Id"].Value));
+				using (EqCardContext ecc = new EqCardContext())
+				{
+					var eqRepairRecord = ecc.EqRepairRecords
+													.Where(err => err.Id == eqRepairRecordForEdit.Id)
+													.FirstOrDefault();
+					eqRepairRecord.RepairDescription = textBox_RepairDescription.Text;
+					eqRepairRecord.RepairComment = textBox_RepairComment.Text;
+					ecc.SaveChanges();
+					GetAllRepairRecord();
+					MessageBox.Show("Запись изменена.");
+				}
+				textBox_RepairDescription.Text = string.Empty;
+				textBox_RepairComment.Text = string.Empty;
+			}
 
 
+			
+		}
 
+		private void button_RepairDelete_Click(object sender, EventArgs e)
+		{
+			if (dataGridView_EqRepairRecord.SelectedRows.Count > 0)
+			{
+				EqRepairRecord eqRepairRecordForDelete = GetRepairRecordById(Convert.ToInt32(dataGridView_EqRepairRecord.CurrentRow.Cells["Id"].Value));
+				using (EqCardContext ecc = new EqCardContext())
+				{
+					var eqRepairRecord = ecc.EqRepairRecords
+													.Where(err => err.Id == eqRepairRecordForDelete.Id)
+													.FirstOrDefault();
+					ecc.EqRepairRecords.Remove(eqRepairRecord);
+					ecc.SaveChanges();
+					GetAllRepairRecord();
+					MessageBox.Show("Запись удалена.");
+				}
+				textBox_RepairDescription.Text = string.Empty;
+				textBox_RepairComment.Text = string.Empty;
+			}
+		}
 
 
 

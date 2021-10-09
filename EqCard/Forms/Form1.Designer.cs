@@ -29,6 +29,7 @@ namespace EqCard
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.components = new System.ComponentModel.Container();
 			this.tabControl = new System.Windows.Forms.TabControl();
 			this.tabPage_EqRecordCard = new System.Windows.Forms.TabPage();
 			this.button_SpareToRecCardEdit = new System.Windows.Forms.Button();
@@ -43,6 +44,8 @@ namespace EqCard
 			this.comboBox_RecordEquipment = new System.Windows.Forms.ComboBox();
 			this.dataGridView_EqRecordCard = new System.Windows.Forms.DataGridView();
 			this.tabPage_EqRepairRecord = new System.Windows.Forms.TabPage();
+			this.button_RepairDelete = new System.Windows.Forms.Button();
+			this.button_RepairEdit = new System.Windows.Forms.Button();
 			this.textBox_RepairComment = new System.Windows.Forms.TextBox();
 			this.label5 = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
@@ -63,14 +66,17 @@ namespace EqCard
 			this.ToolStripMenu_Storage = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenuItem_About = new System.Windows.Forms.ToolStripMenuItem();
 			this.button_Exit = new System.Windows.Forms.Button();
-			this.button_RepairEdit = new System.Windows.Forms.Button();
-			this.button_RepairDelete = new System.Windows.Forms.Button();
+			this.timer1 = new System.Windows.Forms.Timer(this.components);
+			this.toolStripStatusLabel_Time = new System.Windows.Forms.ToolStripStatusLabel();
+			this.toolStripStatusLabel_Date = new System.Windows.Forms.ToolStripStatusLabel();
+			this.toolStripStatusLabel_Day = new System.Windows.Forms.ToolStripStatusLabel();
 			this.tabControl.SuspendLayout();
 			this.tabPage_EqRecordCard.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.numericUpDown_SpareCount)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView_EqRecordCard)).BeginInit();
 			this.tabPage_EqRepairRecord.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView_EqRepairRecord)).BeginInit();
+			this.statusStrip1.SuspendLayout();
 			this.menuStrip1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -226,6 +232,26 @@ namespace EqCard
 			this.tabPage_EqRepairRecord.UseVisualStyleBackColor = true;
 			this.tabPage_EqRepairRecord.Enter += new System.EventHandler(this.tabPage_EqRepairRecord_Enter);
 			// 
+			// button_RepairDelete
+			// 
+			this.button_RepairDelete.Location = new System.Drawing.Point(520, 350);
+			this.button_RepairDelete.Name = "button_RepairDelete";
+			this.button_RepairDelete.Size = new System.Drawing.Size(75, 23);
+			this.button_RepairDelete.TabIndex = 11;
+			this.button_RepairDelete.Text = "Удалить";
+			this.button_RepairDelete.UseVisualStyleBackColor = true;
+			this.button_RepairDelete.Click += new System.EventHandler(this.button_RepairDelete_Click);
+			// 
+			// button_RepairEdit
+			// 
+			this.button_RepairEdit.Location = new System.Drawing.Point(520, 293);
+			this.button_RepairEdit.Name = "button_RepairEdit";
+			this.button_RepairEdit.Size = new System.Drawing.Size(75, 23);
+			this.button_RepairEdit.TabIndex = 10;
+			this.button_RepairEdit.Text = "Сохранить";
+			this.button_RepairEdit.UseVisualStyleBackColor = true;
+			this.button_RepairEdit.Click += new System.EventHandler(this.button_RepairEdit_Click);
+			// 
 			// textBox_RepairComment
 			// 
 			this.textBox_RepairComment.Location = new System.Drawing.Point(144, 352);
@@ -291,6 +317,10 @@ namespace EqCard
 			// 
 			// statusStrip1
 			// 
+			this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel_Time,
+            this.toolStripStatusLabel_Date,
+            this.toolStripStatusLabel_Day});
 			this.statusStrip1.Location = new System.Drawing.Point(0, 539);
 			this.statusStrip1.Name = "statusStrip1";
 			this.statusStrip1.Size = new System.Drawing.Size(784, 22);
@@ -393,25 +423,24 @@ namespace EqCard
 			this.button_Exit.UseVisualStyleBackColor = true;
 			this.button_Exit.Click += new System.EventHandler(this.button_Exit_Click);
 			// 
-			// button_RepairEdit
+			// timer1
 			// 
-			this.button_RepairEdit.Location = new System.Drawing.Point(520, 293);
-			this.button_RepairEdit.Name = "button_RepairEdit";
-			this.button_RepairEdit.Size = new System.Drawing.Size(75, 23);
-			this.button_RepairEdit.TabIndex = 10;
-			this.button_RepairEdit.Text = "Сохранить";
-			this.button_RepairEdit.UseVisualStyleBackColor = true;
-			this.button_RepairEdit.Click += new System.EventHandler(this.button_RepairEdit_Click);
+			this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
 			// 
-			// button_RepairDelete
+			// toolStripStatusLabel_Time
 			// 
-			this.button_RepairDelete.Location = new System.Drawing.Point(520, 350);
-			this.button_RepairDelete.Name = "button_RepairDelete";
-			this.button_RepairDelete.Size = new System.Drawing.Size(75, 23);
-			this.button_RepairDelete.TabIndex = 11;
-			this.button_RepairDelete.Text = "Удалить";
-			this.button_RepairDelete.UseVisualStyleBackColor = true;
-			this.button_RepairDelete.Click += new System.EventHandler(this.button_RepairDelete_Click);
+			this.toolStripStatusLabel_Time.Name = "toolStripStatusLabel_Time";
+			this.toolStripStatusLabel_Time.Size = new System.Drawing.Size(0, 17);
+			// 
+			// toolStripStatusLabel_Date
+			// 
+			this.toolStripStatusLabel_Date.Name = "toolStripStatusLabel_Date";
+			this.toolStripStatusLabel_Date.Size = new System.Drawing.Size(0, 17);
+			// 
+			// toolStripStatusLabel_Day
+			// 
+			this.toolStripStatusLabel_Day.Name = "toolStripStatusLabel_Day";
+			this.toolStripStatusLabel_Day.Size = new System.Drawing.Size(0, 17);
 			// 
 			// Form1
 			// 
@@ -438,6 +467,8 @@ namespace EqCard
 			this.tabPage_EqRepairRecord.ResumeLayout(false);
 			this.tabPage_EqRepairRecord.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView_EqRepairRecord)).EndInit();
+			this.statusStrip1.ResumeLayout(false);
+			this.statusStrip1.PerformLayout();
 			this.menuStrip1.ResumeLayout(false);
 			this.menuStrip1.PerformLayout();
 			this.ResumeLayout(false);
@@ -482,6 +513,10 @@ namespace EqCard
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.Button button_RepairEdit;
 		private System.Windows.Forms.Button button_RepairDelete;
+		private System.Windows.Forms.Timer timer1;
+		private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel_Time;
+		private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel_Date;
+		private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel_Day;
 	}
 }
 

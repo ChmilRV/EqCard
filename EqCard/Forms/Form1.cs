@@ -18,6 +18,9 @@ namespace EqCard
 		{
 			InitializeComponent();
 
+			timer1.Interval = 1000;
+			timer1.Start();
+
 
 			dataGridView_EqRecordCard.AutoGenerateColumns = true;
 			dataGridView_EqRecordCard.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -417,7 +420,11 @@ namespace EqCard
 			}
 		}
 
-
-
+		private void timer1_Tick(object sender, EventArgs e)
+		{
+			toolStripStatusLabel_Time.Text = DateTime.Now.ToLongTimeString();
+			toolStripStatusLabel_Date.Text = DateTime.Now.ToLongDateString();
+			toolStripStatusLabel_Day.Text = DateTime.Now.DayOfWeek.ToString();
+		}
 	}
 }

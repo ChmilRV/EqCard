@@ -76,6 +76,24 @@ namespace EqCard.Forms
 
 		}
 
+		private void button_EquipmentReportSave_Click(object sender, EventArgs e)
+		{
+			//SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+
+			saveFileDialog1.DefaultExt = "*.rtf";
+			saveFileDialog1.Filter = "RTF Files|*.rtf";
+
+			if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+			{
+				richTextBox_EquipmentReport.SaveFile(saveFileDialog1.FileName);
+			}
+
+
+
+
+
+		}
+
 		//private Equipment GetEquipmentByName(string eqName)
 		//{
 		//	using (EqCardContext ecc = new EqCardContext())

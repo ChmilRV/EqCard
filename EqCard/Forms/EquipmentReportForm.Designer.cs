@@ -33,6 +33,8 @@ namespace EqCard.Forms
 			this.button_EquipmentReportFormClose = new System.Windows.Forms.Button();
 			this.comboBox_EquipmentForReport = new System.Windows.Forms.ComboBox();
 			this.button_EquipmentReportGenerate = new System.Windows.Forms.Button();
+			this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+			this.button_EquipmentReportSave = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// richTextBox_EquipmentReport
@@ -72,11 +74,22 @@ namespace EqCard.Forms
 			this.button_EquipmentReportGenerate.UseVisualStyleBackColor = true;
 			this.button_EquipmentReportGenerate.Click += new System.EventHandler(this.button_EquipmentReportGenerate_Click);
 			// 
+			// button_EquipmentReportSave
+			// 
+			this.button_EquipmentReportSave.Location = new System.Drawing.Point(514, 526);
+			this.button_EquipmentReportSave.Name = "button_EquipmentReportSave";
+			this.button_EquipmentReportSave.Size = new System.Drawing.Size(109, 23);
+			this.button_EquipmentReportSave.TabIndex = 4;
+			this.button_EquipmentReportSave.Text = "Сохранить";
+			this.button_EquipmentReportSave.UseVisualStyleBackColor = true;
+			this.button_EquipmentReportSave.Click += new System.EventHandler(this.button_EquipmentReportSave_Click);
+			// 
 			// EquipmentReportForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(784, 561);
+			this.Controls.Add(this.button_EquipmentReportSave);
 			this.Controls.Add(this.button_EquipmentReportGenerate);
 			this.Controls.Add(this.comboBox_EquipmentForReport);
 			this.Controls.Add(this.button_EquipmentReportFormClose);
@@ -97,5 +110,7 @@ namespace EqCard.Forms
 		private System.Windows.Forms.Button button_EquipmentReportFormClose;
 		private System.Windows.Forms.ComboBox comboBox_EquipmentForReport;
 		private System.Windows.Forms.Button button_EquipmentReportGenerate;
+		private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+		private System.Windows.Forms.Button button_EquipmentReportSave;
 	}
 }

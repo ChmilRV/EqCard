@@ -426,5 +426,19 @@ namespace EqCard
 			toolStripStatusLabel_Date.Text = DateTime.Now.ToLongDateString();
 			toolStripStatusLabel_Day.Text = DateTime.Now.DayOfWeek.ToString();
 		}
+
+		private void toolStripMenuItem_EquipmentReport_Click(object sender, EventArgs e)
+		{
+			EquipmentReportForm equipmentReportForm = new EquipmentReportForm();
+			equipmentReportForm.ShowDialog();
+		}
+
+
+		private void ToolStripMenuItem_SpareReport_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		
 	}
 }

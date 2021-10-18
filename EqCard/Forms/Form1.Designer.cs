@@ -59,6 +59,8 @@ namespace EqCard
 			this.toolStripStatusLabel_Day = new System.Windows.Forms.ToolStripStatusLabel();
 			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
 			this.toolStripMenu_Reports = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripMenuItem_EquipmentReport = new System.Windows.Forms.ToolStripMenuItem();
+			this.ToolStripMenuItem_SpareReport = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenu_Edit = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenu_Equipment = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenu_EquipmentEdit = new System.Windows.Forms.ToolStripMenuItem();
@@ -69,8 +71,6 @@ namespace EqCard
 			this.toolStripMenuItem_About = new System.Windows.Forms.ToolStripMenuItem();
 			this.button_Exit = new System.Windows.Forms.Button();
 			this.timer1 = new System.Windows.Forms.Timer(this.components);
-			this.toolStripMenuItem_EquipmentReport = new System.Windows.Forms.ToolStripMenuItem();
-			this.ToolStripMenuItem_SpareReport = new System.Windows.Forms.ToolStripMenuItem();
 			this.tabControl.SuspendLayout();
 			this.tabPage_EqRecordCard.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.numericUpDown_SpareCount)).BeginInit();
@@ -198,7 +198,7 @@ namespace EqCard
 			// 
 			this.comboBox_RecordEquipment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.comboBox_RecordEquipment.FormattingEnabled = true;
-			this.comboBox_RecordEquipment.Location = new System.Drawing.Point(64, 16);
+			this.comboBox_RecordEquipment.Location = new System.Drawing.Point(146, 21);
 			this.comboBox_RecordEquipment.Name = "comboBox_RecordEquipment";
 			this.comboBox_RecordEquipment.Size = new System.Drawing.Size(272, 21);
 			this.comboBox_RecordEquipment.TabIndex = 2;
@@ -364,6 +364,20 @@ namespace EqCard
 			this.toolStripMenu_Reports.Size = new System.Drawing.Size(60, 20);
 			this.toolStripMenu_Reports.Text = "Отчеты";
 			// 
+			// toolStripMenuItem_EquipmentReport
+			// 
+			this.toolStripMenuItem_EquipmentReport.Name = "toolStripMenuItem_EquipmentReport";
+			this.toolStripMenuItem_EquipmentReport.Size = new System.Drawing.Size(155, 22);
+			this.toolStripMenuItem_EquipmentReport.Text = "Оборудование";
+			this.toolStripMenuItem_EquipmentReport.Click += new System.EventHandler(this.toolStripMenuItem_EquipmentReport_Click);
+			// 
+			// ToolStripMenuItem_SpareReport
+			// 
+			this.ToolStripMenuItem_SpareReport.Name = "ToolStripMenuItem_SpareReport";
+			this.ToolStripMenuItem_SpareReport.Size = new System.Drawing.Size(155, 22);
+			this.ToolStripMenuItem_SpareReport.Text = "Запчасти";
+			this.ToolStripMenuItem_SpareReport.Click += new System.EventHandler(this.ToolStripMenuItem_SpareReport_Click);
+			// 
 			// toolStripMenu_Edit
 			// 
 			this.toolStripMenu_Edit.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -379,7 +393,7 @@ namespace EqCard
             this.toolStripMenu_EquipmentEdit,
             this.toolStripMenu_Location});
 			this.toolStripMenu_Equipment.Name = "toolStripMenu_Equipment";
-			this.toolStripMenu_Equipment.Size = new System.Drawing.Size(180, 22);
+			this.toolStripMenu_Equipment.Size = new System.Drawing.Size(155, 22);
 			this.toolStripMenu_Equipment.Text = "Оборудование";
 			// 
 			// toolStripMenu_EquipmentEdit
@@ -402,7 +416,7 @@ namespace EqCard
             this.toolStripMenuItem_SpareEdit,
             this.toolStripMenu_SpareCategory});
 			this.toolStripMenu_Spare.Name = "toolStripMenu_Spare";
-			this.toolStripMenu_Spare.Size = new System.Drawing.Size(180, 22);
+			this.toolStripMenu_Spare.Size = new System.Drawing.Size(155, 22);
 			this.toolStripMenu_Spare.Text = "Запчасти";
 			// 
 			// toolStripMenuItem_SpareEdit
@@ -438,20 +452,6 @@ namespace EqCard
 			// timer1
 			// 
 			this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-			// 
-			// toolStripMenuItem_EquipmentReport
-			// 
-			this.toolStripMenuItem_EquipmentReport.Name = "toolStripMenuItem_EquipmentReport";
-			this.toolStripMenuItem_EquipmentReport.Size = new System.Drawing.Size(180, 22);
-			this.toolStripMenuItem_EquipmentReport.Text = "Оборудование";
-			this.toolStripMenuItem_EquipmentReport.Click += new System.EventHandler(this.toolStripMenuItem_EquipmentReport_Click);
-			// 
-			// ToolStripMenuItem_SpareReport
-			// 
-			this.ToolStripMenuItem_SpareReport.Name = "ToolStripMenuItem_SpareReport";
-			this.ToolStripMenuItem_SpareReport.Size = new System.Drawing.Size(180, 22);
-			this.ToolStripMenuItem_SpareReport.Text = "Запчасти";
-			this.ToolStripMenuItem_SpareReport.Click += new System.EventHandler(this.ToolStripMenuItem_SpareReport_Click);
 			// 
 			// Form1
 			// 

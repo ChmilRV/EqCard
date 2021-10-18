@@ -35,6 +35,8 @@ namespace EqCard.Forms
 			this.button_EquipmentReportGenerate = new System.Windows.Forms.Button();
 			this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
 			this.button_EquipmentReportSave = new System.Windows.Forms.Button();
+			this.checkBox_CheckAllEquipments = new System.Windows.Forms.CheckBox();
+			this.label1 = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
 			// richTextBox_EquipmentReport
@@ -59,10 +61,11 @@ namespace EqCard.Forms
 			// 
 			this.comboBox_EquipmentForReport.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.comboBox_EquipmentForReport.FormattingEnabled = true;
-			this.comboBox_EquipmentForReport.Location = new System.Drawing.Point(198, 27);
+			this.comboBox_EquipmentForReport.Location = new System.Drawing.Point(110, 23);
 			this.comboBox_EquipmentForReport.Name = "comboBox_EquipmentForReport";
-			this.comboBox_EquipmentForReport.Size = new System.Drawing.Size(300, 21);
+			this.comboBox_EquipmentForReport.Size = new System.Drawing.Size(395, 21);
 			this.comboBox_EquipmentForReport.TabIndex = 2;
+			this.comboBox_EquipmentForReport.SelectedIndexChanged += new System.EventHandler(this.comboBox_EquipmentForReport_SelectedIndexChanged);
 			// 
 			// button_EquipmentReportGenerate
 			// 
@@ -84,11 +87,32 @@ namespace EqCard.Forms
 			this.button_EquipmentReportSave.UseVisualStyleBackColor = true;
 			this.button_EquipmentReportSave.Click += new System.EventHandler(this.button_EquipmentReportSave_Click);
 			// 
+			// checkBox_CheckAllEquipments
+			// 
+			this.checkBox_CheckAllEquipments.AutoSize = true;
+			this.checkBox_CheckAllEquipments.Location = new System.Drawing.Point(532, 25);
+			this.checkBox_CheckAllEquipments.Name = "checkBox_CheckAllEquipments";
+			this.checkBox_CheckAllEquipments.Size = new System.Drawing.Size(91, 17);
+			this.checkBox_CheckAllEquipments.TabIndex = 5;
+			this.checkBox_CheckAllEquipments.Text = "Выбрать все";
+			this.checkBox_CheckAllEquipments.UseVisualStyleBackColor = true;
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Location = new System.Drawing.Point(21, 27);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(83, 13);
+			this.label1.TabIndex = 6;
+			this.label1.Text = "Оборудование:";
+			// 
 			// EquipmentReportForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(784, 561);
+			this.Controls.Add(this.label1);
+			this.Controls.Add(this.checkBox_CheckAllEquipments);
 			this.Controls.Add(this.button_EquipmentReportSave);
 			this.Controls.Add(this.button_EquipmentReportGenerate);
 			this.Controls.Add(this.comboBox_EquipmentForReport);
@@ -101,6 +125,7 @@ namespace EqCard.Forms
 			this.Text = "Отчет по оборудованию";
 			this.Load += new System.EventHandler(this.EquipmentReportForm_Load);
 			this.ResumeLayout(false);
+			this.PerformLayout();
 
 		}
 
@@ -112,5 +137,7 @@ namespace EqCard.Forms
 		private System.Windows.Forms.Button button_EquipmentReportGenerate;
 		private System.Windows.Forms.SaveFileDialog saveFileDialog1;
 		private System.Windows.Forms.Button button_EquipmentReportSave;
+		private System.Windows.Forms.CheckBox checkBox_CheckAllEquipments;
+		private System.Windows.Forms.Label label1;
 	}
 }

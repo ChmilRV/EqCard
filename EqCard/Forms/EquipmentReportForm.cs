@@ -45,14 +45,53 @@ namespace EqCard.Forms
 
 		private void button_EquipmentReportGenerate_Click(object sender, EventArgs e)
 		{
+			if (checkBox_CheckAllEquipments.Checked)
+			{
+				richTextBox_EquipmentReport.Text = MakeReportByAllEquipments();
+			}
+			else
+			{
+				richTextBox_EquipmentReport.Text = MakeReportBySelectedEquipment();
+			}
+		}
+
+		private string MakeReportByAllEquipments()
+		{
+			string reportString = string.Empty;
+			using (EqCardContext ecc1 = new EqCardContext())
+			{
+				var equipmentList = ecc1.Equipments;
+				foreach (var eq in equipmentList)
+				{
+					using (EqCardContext ecc2 = new EqCardContext())
+					{
+						var eqRecordCards = ecc2.EqRecordCards
+														  .Where(erc => erc.Equipment.Id == eq.Id)
+														  .Select(s => new
+														  {
+															  s.Spare.SpareName,
+															  s.SpareCount
+														  });
+						reportString += $"Отчет по оборудованию {eq.EqName}\n";
+						foreach (var erc in eqRecordCards)
+						{
+							reportString += $"Название {erc.SpareName} \t Количество {erc.SpareCount}\n";
+						}
+					}
+
+						
+				}
+			}
+			return reportString;
+		}
+
+		private string MakeReportBySelectedEquipment()
+		{
 			string reportString = string.Empty;
 			if (comboBox_EquipmentForReport.SelectedItem != null)
 			{
-
 				using (EqCardContext ecc = new EqCardContext())
 				{
-					//int tempEquipmentId = GetEquipmentByName(comboBox_EquipmentForReport.SelectedItem.ToString()).Id;
-
 					var eqRecordCards = ecc.EqRecordCards
 											  .Where(erc => erc.Equipment.EqName == comboBox_EquipmentForReport.SelectedItem.ToString())
 											  .Select(s => new
@@ -60,20 +99,14 @@ namespace EqCard.Forms
 												  s.Spare.SpareName,
 												  s.SpareCount
 											  });
-
 					reportString = $"Отчет по оборудованию {comboBox_EquipmentForReport.SelectedItem}\n";
-
 					foreach (var erc in eqRecordCards)
 					{
 						reportString += $"Название {erc.SpareName} \t Количество {erc.SpareCount}\n";
 					}
-
-
-
 				}
-				richTextBox_EquipmentReport.Text = reportString;
 			}
-
+			return reportString;
 		}
 
 		private void button_EquipmentReportSave_Click(object sender, EventArgs e)
@@ -92,6 +125,11 @@ namespace EqCard.Forms
 
 
 
+		}
+
+		private void comboBox_EquipmentForReport_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			checkBox_CheckAllEquipments.Checked = false;
 		}
 
 		//private Equipment GetEquipmentByName(string eqName)

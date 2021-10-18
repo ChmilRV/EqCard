@@ -72,7 +72,7 @@ namespace EqCard.Forms
 															  s.Spare.SpareName,
 															  s.SpareCount
 														  });
-						reportString += $"Отчет по оборудованию {eq.EqName}\n";
+						reportString += $"Отчет по оборудованию {eq.EqName} от {DateTime.Now.ToShortDateString()} {DateTime.Now.ToShortTimeString()}\n";
 						foreach (var erc in eqRecordCards)
 						{
 							reportString += $"Название {erc.SpareName} \t Количество {erc.SpareCount}\n";
@@ -99,7 +99,7 @@ namespace EqCard.Forms
 												  s.Spare.SpareName,
 												  s.SpareCount
 											  });
-					reportString = $"Отчет по оборудованию {comboBox_EquipmentForReport.SelectedItem}\n";
+					reportString = $"Отчет по оборудованию: {comboBox_EquipmentForReport.SelectedItem} от {DateTime.Now.ToShortDateString()} {DateTime.Now.ToShortTimeString()}\n";
 					foreach (var erc in eqRecordCards)
 					{
 						reportString += $"Название {erc.SpareName} \t Количество {erc.SpareCount}\n";

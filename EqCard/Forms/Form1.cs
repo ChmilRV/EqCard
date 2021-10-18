@@ -433,12 +433,10 @@ namespace EqCard
 			equipmentReportForm.ShowDialog();
 		}
 
-
-		private void ToolStripMenuItem_SpareReport_Click(object sender, EventArgs e)
+		private void toolStripMenuItem_SpareReport_Click(object sender, EventArgs e)
 		{
-
+			SpareReportForm spareReportForm = new SpareReportForm();
+			spareReportForm.ShowDialog();
 		}
-
-		
 	}
 }

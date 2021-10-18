@@ -60,7 +60,7 @@ namespace EqCard
 			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
 			this.toolStripMenu_Reports = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenuItem_EquipmentReport = new System.Windows.Forms.ToolStripMenuItem();
-			this.ToolStripMenuItem_SpareReport = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripMenuItem_SpareReport = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenu_Edit = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenu_Equipment = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenu_EquipmentEdit = new System.Windows.Forms.ToolStripMenuItem();
@@ -359,7 +359,7 @@ namespace EqCard
 			// 
 			this.toolStripMenu_Reports.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem_EquipmentReport,
-            this.ToolStripMenuItem_SpareReport});
+            this.toolStripMenuItem_SpareReport});
 			this.toolStripMenu_Reports.Name = "toolStripMenu_Reports";
 			this.toolStripMenu_Reports.Size = new System.Drawing.Size(60, 20);
 			this.toolStripMenu_Reports.Text = "Отчеты";
@@ -367,16 +367,16 @@ namespace EqCard
 			// toolStripMenuItem_EquipmentReport
 			// 
 			this.toolStripMenuItem_EquipmentReport.Name = "toolStripMenuItem_EquipmentReport";
-			this.toolStripMenuItem_EquipmentReport.Size = new System.Drawing.Size(155, 22);
+			this.toolStripMenuItem_EquipmentReport.Size = new System.Drawing.Size(180, 22);
 			this.toolStripMenuItem_EquipmentReport.Text = "Оборудование";
 			this.toolStripMenuItem_EquipmentReport.Click += new System.EventHandler(this.toolStripMenuItem_EquipmentReport_Click);
 			// 
-			// ToolStripMenuItem_SpareReport
+			// toolStripMenuItem_SpareReport
 			// 
-			this.ToolStripMenuItem_SpareReport.Name = "ToolStripMenuItem_SpareReport";
-			this.ToolStripMenuItem_SpareReport.Size = new System.Drawing.Size(155, 22);
-			this.ToolStripMenuItem_SpareReport.Text = "Запчасти";
-			this.ToolStripMenuItem_SpareReport.Click += new System.EventHandler(this.ToolStripMenuItem_SpareReport_Click);
+			this.toolStripMenuItem_SpareReport.Name = "toolStripMenuItem_SpareReport";
+			this.toolStripMenuItem_SpareReport.Size = new System.Drawing.Size(180, 22);
+			this.toolStripMenuItem_SpareReport.Text = "Запчасти";
+			this.toolStripMenuItem_SpareReport.Click += new System.EventHandler(this.toolStripMenuItem_SpareReport_Click);
 			// 
 			// toolStripMenu_Edit
 			// 
@@ -528,7 +528,7 @@ namespace EqCard
 		private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel_Date;
 		private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel_Day;
 		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem_EquipmentReport;
-		private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_SpareReport;
+		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem_SpareReport;
 	}
 }
 

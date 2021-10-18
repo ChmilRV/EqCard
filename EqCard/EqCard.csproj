@@ -94,6 +94,12 @@
     <Compile Include="Forms\SpareForm.Designer.cs">
       <DependentUpon>SpareForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\SpareReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SpareReportForm.Designer.cs">
+      <DependentUpon>SpareReportForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\EqCardContext.cs" />
     <Compile Include="Models\EqRecordCard.cs" />
     <Compile Include="Models\EqRepairRecord.cs" />
@@ -121,6 +127,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SpareForm.resx">
       <DependentUpon>SpareForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SpareReportForm.resx">
+      <DependentUpon>SpareReportForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

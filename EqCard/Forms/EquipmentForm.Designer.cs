@@ -48,13 +48,13 @@ namespace EqCard.Forms
 			this.dataGridView_Equipment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dataGridView_Equipment.Location = new System.Drawing.Point(12, 12);
 			this.dataGridView_Equipment.Name = "dataGridView_Equipment";
-			this.dataGridView_Equipment.Size = new System.Drawing.Size(573, 233);
+			this.dataGridView_Equipment.Size = new System.Drawing.Size(601, 242);
 			this.dataGridView_Equipment.TabIndex = 2;
 			this.dataGridView_Equipment.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Equipment_CellClick);
 			// 
 			// button_EquipmentEdit
 			// 
-			this.button_EquipmentEdit.Location = new System.Drawing.Point(487, 305);
+			this.button_EquipmentEdit.Location = new System.Drawing.Point(538, 341);
 			this.button_EquipmentEdit.Name = "button_EquipmentEdit";
 			this.button_EquipmentEdit.Size = new System.Drawing.Size(75, 23);
 			this.button_EquipmentEdit.TabIndex = 26;
@@ -64,7 +64,7 @@ namespace EqCard.Forms
 			// 
 			// button_EquipmentDelete
 			// 
-			this.button_EquipmentDelete.Location = new System.Drawing.Point(487, 334);
+			this.button_EquipmentDelete.Location = new System.Drawing.Point(538, 370);
 			this.button_EquipmentDelete.Name = "button_EquipmentDelete";
 			this.button_EquipmentDelete.Size = new System.Drawing.Size(75, 23);
 			this.button_EquipmentDelete.TabIndex = 25;
@@ -74,7 +74,7 @@ namespace EqCard.Forms
 			// 
 			// button_EquipmentAdd
 			// 
-			this.button_EquipmentAdd.Location = new System.Drawing.Point(487, 275);
+			this.button_EquipmentAdd.Location = new System.Drawing.Point(538, 311);
 			this.button_EquipmentAdd.Name = "button_EquipmentAdd";
 			this.button_EquipmentAdd.Size = new System.Drawing.Size(75, 23);
 			this.button_EquipmentAdd.TabIndex = 24;
@@ -84,7 +84,7 @@ namespace EqCard.Forms
 			// 
 			// button_EquipmentExit
 			// 
-			this.button_EquipmentExit.Location = new System.Drawing.Point(487, 363);
+			this.button_EquipmentExit.Location = new System.Drawing.Point(538, 399);
 			this.button_EquipmentExit.Name = "button_EquipmentExit";
 			this.button_EquipmentExit.Size = new System.Drawing.Size(75, 23);
 			this.button_EquipmentExit.TabIndex = 23;
@@ -95,7 +95,7 @@ namespace EqCard.Forms
 			// label4
 			// 
 			this.label4.AutoSize = true;
-			this.label4.Location = new System.Drawing.Point(10, 363);
+			this.label4.Location = new System.Drawing.Point(10, 351);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(70, 13);
 			this.label4.TabIndex = 29;
@@ -124,7 +124,7 @@ namespace EqCard.Forms
 			this.textBox_EquipmentComment.Location = new System.Drawing.Point(103, 348);
 			this.textBox_EquipmentComment.Multiline = true;
 			this.textBox_EquipmentComment.Name = "textBox_EquipmentComment";
-			this.textBox_EquipmentComment.Size = new System.Drawing.Size(240, 60);
+			this.textBox_EquipmentComment.Size = new System.Drawing.Size(411, 74);
 			this.textBox_EquipmentComment.TabIndex = 33;
 			// 
 			// comboBox_EqLocation
@@ -133,7 +133,7 @@ namespace EqCard.Forms
 			this.comboBox_EqLocation.FormattingEnabled = true;
 			this.comboBox_EqLocation.Location = new System.Drawing.Point(103, 309);
 			this.comboBox_EqLocation.Name = "comboBox_EqLocation";
-			this.comboBox_EqLocation.Size = new System.Drawing.Size(240, 21);
+			this.comboBox_EqLocation.Size = new System.Drawing.Size(411, 21);
 			this.comboBox_EqLocation.Sorted = true;
 			this.comboBox_EqLocation.TabIndex = 32;
 			// 
@@ -141,14 +141,14 @@ namespace EqCard.Forms
 			// 
 			this.textBox_EqName.Location = new System.Drawing.Point(103, 276);
 			this.textBox_EqName.Name = "textBox_EqName";
-			this.textBox_EqName.Size = new System.Drawing.Size(240, 20);
+			this.textBox_EqName.Size = new System.Drawing.Size(411, 20);
 			this.textBox_EqName.TabIndex = 31;
 			// 
 			// EquipmentForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(625, 450);
+			this.ClientSize = new System.Drawing.Size(624, 441);
 			this.Controls.Add(this.textBox_EquipmentComment);
 			this.Controls.Add(this.comboBox_EqLocation);
 			this.Controls.Add(this.textBox_EqName);

@@ -114,7 +114,7 @@ namespace EqCard
 			// 
 			// button_SpareToRecCardEdit
 			// 
-			this.button_SpareToRecCardEdit.Location = new System.Drawing.Point(645, 354);
+			this.button_SpareToRecCardEdit.Location = new System.Drawing.Point(693, 384);
 			this.button_SpareToRecCardEdit.Name = "button_SpareToRecCardEdit";
 			this.button_SpareToRecCardEdit.Size = new System.Drawing.Size(75, 23);
 			this.button_SpareToRecCardEdit.TabIndex = 28;
@@ -124,7 +124,7 @@ namespace EqCard
 			// 
 			// button_SpareToRecCardDelete
 			// 
-			this.button_SpareToRecCardDelete.Location = new System.Drawing.Point(645, 383);
+			this.button_SpareToRecCardDelete.Location = new System.Drawing.Point(693, 413);
 			this.button_SpareToRecCardDelete.Name = "button_SpareToRecCardDelete";
 			this.button_SpareToRecCardDelete.Size = new System.Drawing.Size(75, 23);
 			this.button_SpareToRecCardDelete.TabIndex = 27;
@@ -161,32 +161,32 @@ namespace EqCard
 			// 
 			// textBox_EqRecordCardComment
 			// 
-			this.textBox_EqRecordCardComment.Location = new System.Drawing.Point(200, 384);
+			this.textBox_EqRecordCardComment.Location = new System.Drawing.Point(169, 384);
 			this.textBox_EqRecordCardComment.Multiline = true;
 			this.textBox_EqRecordCardComment.Name = "textBox_EqRecordCardComment";
-			this.textBox_EqRecordCardComment.Size = new System.Drawing.Size(192, 32);
+			this.textBox_EqRecordCardComment.Size = new System.Drawing.Size(373, 52);
 			this.textBox_EqRecordCardComment.TabIndex = 6;
 			// 
 			// numericUpDown_SpareCount
 			// 
-			this.numericUpDown_SpareCount.Location = new System.Drawing.Point(200, 344);
+			this.numericUpDown_SpareCount.Location = new System.Drawing.Point(169, 344);
 			this.numericUpDown_SpareCount.Name = "numericUpDown_SpareCount";
-			this.numericUpDown_SpareCount.Size = new System.Drawing.Size(192, 20);
+			this.numericUpDown_SpareCount.Size = new System.Drawing.Size(373, 20);
 			this.numericUpDown_SpareCount.TabIndex = 5;
 			// 
 			// comboBox_Spare
 			// 
 			this.comboBox_Spare.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.comboBox_Spare.FormattingEnabled = true;
-			this.comboBox_Spare.Location = new System.Drawing.Point(200, 312);
+			this.comboBox_Spare.Location = new System.Drawing.Point(169, 312);
 			this.comboBox_Spare.Name = "comboBox_Spare";
-			this.comboBox_Spare.Size = new System.Drawing.Size(192, 21);
+			this.comboBox_Spare.Size = new System.Drawing.Size(373, 21);
 			this.comboBox_Spare.Sorted = true;
 			this.comboBox_Spare.TabIndex = 4;
 			// 
 			// button_SpareToRecCardAdd
 			// 
-			this.button_SpareToRecCardAdd.Location = new System.Drawing.Point(645, 314);
+			this.button_SpareToRecCardAdd.Location = new System.Drawing.Point(693, 353);
 			this.button_SpareToRecCardAdd.Name = "button_SpareToRecCardAdd";
 			this.button_SpareToRecCardAdd.Size = new System.Drawing.Size(75, 23);
 			this.button_SpareToRecCardAdd.TabIndex = 3;
@@ -198,18 +198,18 @@ namespace EqCard
 			// 
 			this.comboBox_RecordEquipment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.comboBox_RecordEquipment.FormattingEnabled = true;
-			this.comboBox_RecordEquipment.Location = new System.Drawing.Point(146, 21);
+			this.comboBox_RecordEquipment.Location = new System.Drawing.Point(8, 21);
 			this.comboBox_RecordEquipment.Name = "comboBox_RecordEquipment";
-			this.comboBox_RecordEquipment.Size = new System.Drawing.Size(272, 21);
+			this.comboBox_RecordEquipment.Size = new System.Drawing.Size(280, 21);
 			this.comboBox_RecordEquipment.TabIndex = 2;
 			this.comboBox_RecordEquipment.SelectedIndexChanged += new System.EventHandler(this.comboBox_Equipment_SelectedIndexChanged);
 			// 
 			// dataGridView_EqRecordCard
 			// 
 			this.dataGridView_EqRecordCard.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView_EqRecordCard.Location = new System.Drawing.Point(16, 48);
+			this.dataGridView_EqRecordCard.Location = new System.Drawing.Point(8, 48);
 			this.dataGridView_EqRecordCard.Name = "dataGridView_EqRecordCard";
-			this.dataGridView_EqRecordCard.Size = new System.Drawing.Size(704, 240);
+			this.dataGridView_EqRecordCard.Size = new System.Drawing.Size(760, 240);
 			this.dataGridView_EqRecordCard.TabIndex = 0;
 			this.dataGridView_EqRecordCard.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_EqRecordCard_CellClick);
 			// 
@@ -235,7 +235,7 @@ namespace EqCard
 			// 
 			// button_RepairDelete
 			// 
-			this.button_RepairDelete.Location = new System.Drawing.Point(656, 334);
+			this.button_RepairDelete.Location = new System.Drawing.Point(693, 417);
 			this.button_RepairDelete.Name = "button_RepairDelete";
 			this.button_RepairDelete.Size = new System.Drawing.Size(75, 23);
 			this.button_RepairDelete.TabIndex = 11;
@@ -245,7 +245,7 @@ namespace EqCard
 			// 
 			// button_RepairEdit
 			// 
-			this.button_RepairEdit.Location = new System.Drawing.Point(656, 277);
+			this.button_RepairEdit.Location = new System.Drawing.Point(693, 388);
 			this.button_RepairEdit.Name = "button_RepairEdit";
 			this.button_RepairEdit.Size = new System.Drawing.Size(75, 23);
 			this.button_RepairEdit.TabIndex = 10;
@@ -255,16 +255,16 @@ namespace EqCard
 			// 
 			// textBox_RepairComment
 			// 
-			this.textBox_RepairComment.Location = new System.Drawing.Point(144, 352);
+			this.textBox_RepairComment.Location = new System.Drawing.Point(104, 388);
 			this.textBox_RepairComment.Multiline = true;
 			this.textBox_RepairComment.Name = "textBox_RepairComment";
-			this.textBox_RepairComment.Size = new System.Drawing.Size(459, 88);
+			this.textBox_RepairComment.Size = new System.Drawing.Size(499, 52);
 			this.textBox_RepairComment.TabIndex = 9;
 			// 
 			// label5
 			// 
 			this.label5.AutoSize = true;
-			this.label5.Location = new System.Drawing.Point(24, 368);
+			this.label5.Location = new System.Drawing.Point(6, 388);
 			this.label5.Name = "label5";
 			this.label5.Size = new System.Drawing.Size(70, 13);
 			this.label5.TabIndex = 8;
@@ -273,7 +273,7 @@ namespace EqCard
 			// label4
 			// 
 			this.label4.AutoSize = true;
-			this.label4.Location = new System.Drawing.Point(24, 248);
+			this.label4.Location = new System.Drawing.Point(19, 325);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(57, 13);
 			this.label4.TabIndex = 7;
@@ -281,15 +281,15 @@ namespace EqCard
 			// 
 			// textBox_RepairDescription
 			// 
-			this.textBox_RepairDescription.Location = new System.Drawing.Point(144, 240);
+			this.textBox_RepairDescription.Location = new System.Drawing.Point(104, 325);
 			this.textBox_RepairDescription.Multiline = true;
 			this.textBox_RepairDescription.Name = "textBox_RepairDescription";
-			this.textBox_RepairDescription.Size = new System.Drawing.Size(459, 88);
+			this.textBox_RepairDescription.Size = new System.Drawing.Size(499, 57);
 			this.textBox_RepairDescription.TabIndex = 6;
 			// 
 			// button_RepairAdd
 			// 
-			this.button_RepairAdd.Location = new System.Drawing.Point(656, 232);
+			this.button_RepairAdd.Location = new System.Drawing.Point(693, 359);
 			this.button_RepairAdd.Name = "button_RepairAdd";
 			this.button_RepairAdd.Size = new System.Drawing.Size(75, 23);
 			this.button_RepairAdd.TabIndex = 5;
@@ -300,9 +300,9 @@ namespace EqCard
 			// dataGridView_EqRepairRecord
 			// 
 			this.dataGridView_EqRepairRecord.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView_EqRepairRecord.Location = new System.Drawing.Point(24, 56);
+			this.dataGridView_EqRepairRecord.Location = new System.Drawing.Point(8, 56);
 			this.dataGridView_EqRepairRecord.Name = "dataGridView_EqRepairRecord";
-			this.dataGridView_EqRepairRecord.Size = new System.Drawing.Size(744, 150);
+			this.dataGridView_EqRepairRecord.Size = new System.Drawing.Size(760, 251);
 			this.dataGridView_EqRepairRecord.TabIndex = 4;
 			this.dataGridView_EqRepairRecord.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_EqRepairRecord_CellClick);
 			// 
@@ -310,7 +310,7 @@ namespace EqCard
 			// 
 			this.comboBox_RepairEquipment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.comboBox_RepairEquipment.FormattingEnabled = true;
-			this.comboBox_RepairEquipment.Location = new System.Drawing.Point(118, 20);
+			this.comboBox_RepairEquipment.Location = new System.Drawing.Point(8, 20);
 			this.comboBox_RepairEquipment.Name = "comboBox_RepairEquipment";
 			this.comboBox_RepairEquipment.Size = new System.Drawing.Size(272, 21);
 			this.comboBox_RepairEquipment.TabIndex = 3;
@@ -367,14 +367,14 @@ namespace EqCard
 			// toolStripMenuItem_EquipmentReport
 			// 
 			this.toolStripMenuItem_EquipmentReport.Name = "toolStripMenuItem_EquipmentReport";
-			this.toolStripMenuItem_EquipmentReport.Size = new System.Drawing.Size(180, 22);
+			this.toolStripMenuItem_EquipmentReport.Size = new System.Drawing.Size(155, 22);
 			this.toolStripMenuItem_EquipmentReport.Text = "Оборудование";
 			this.toolStripMenuItem_EquipmentReport.Click += new System.EventHandler(this.toolStripMenuItem_EquipmentReport_Click);
 			// 
 			// toolStripMenuItem_SpareReport
 			// 
 			this.toolStripMenuItem_SpareReport.Name = "toolStripMenuItem_SpareReport";
-			this.toolStripMenuItem_SpareReport.Size = new System.Drawing.Size(180, 22);
+			this.toolStripMenuItem_SpareReport.Size = new System.Drawing.Size(155, 22);
 			this.toolStripMenuItem_SpareReport.Text = "Запчасти";
 			this.toolStripMenuItem_SpareReport.Click += new System.EventHandler(this.toolStripMenuItem_SpareReport_Click);
 			// 

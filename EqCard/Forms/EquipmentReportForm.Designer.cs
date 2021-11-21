@@ -69,7 +69,7 @@ namespace EqCard.Forms
 			// 
 			// button_EquipmentReportGenerate
 			// 
-			this.button_EquipmentReportGenerate.Location = new System.Drawing.Point(657, 27);
+			this.button_EquipmentReportGenerate.Location = new System.Drawing.Point(657, 21);
 			this.button_EquipmentReportGenerate.Name = "button_EquipmentReportGenerate";
 			this.button_EquipmentReportGenerate.Size = new System.Drawing.Size(115, 23);
 			this.button_EquipmentReportGenerate.TabIndex = 3;

@@ -51,13 +51,13 @@ namespace EqCard.Forms
 			this.dataGridView_Spare.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dataGridView_Spare.Location = new System.Drawing.Point(12, 12);
 			this.dataGridView_Spare.Name = "dataGridView_Spare";
-			this.dataGridView_Spare.Size = new System.Drawing.Size(544, 200);
+			this.dataGridView_Spare.Size = new System.Drawing.Size(600, 234);
 			this.dataGridView_Spare.TabIndex = 1;
 			this.dataGridView_Spare.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Spare_CellClick);
 			// 
 			// button_SpareEdit
 			// 
-			this.button_SpareEdit.Location = new System.Drawing.Point(481, 273);
+			this.button_SpareEdit.Location = new System.Drawing.Point(537, 348);
 			this.button_SpareEdit.Name = "button_SpareEdit";
 			this.button_SpareEdit.Size = new System.Drawing.Size(75, 23);
 			this.button_SpareEdit.TabIndex = 22;
@@ -67,7 +67,7 @@ namespace EqCard.Forms
 			// 
 			// button_SpareDelete
 			// 
-			this.button_SpareDelete.Location = new System.Drawing.Point(481, 302);
+			this.button_SpareDelete.Location = new System.Drawing.Point(537, 377);
 			this.button_SpareDelete.Name = "button_SpareDelete";
 			this.button_SpareDelete.Size = new System.Drawing.Size(75, 23);
 			this.button_SpareDelete.TabIndex = 21;
@@ -77,7 +77,7 @@ namespace EqCard.Forms
 			// 
 			// button_SpareAdd
 			// 
-			this.button_SpareAdd.Location = new System.Drawing.Point(481, 243);
+			this.button_SpareAdd.Location = new System.Drawing.Point(537, 318);
 			this.button_SpareAdd.Name = "button_SpareAdd";
 			this.button_SpareAdd.Size = new System.Drawing.Size(75, 23);
 			this.button_SpareAdd.TabIndex = 20;
@@ -87,7 +87,7 @@ namespace EqCard.Forms
 			// 
 			// button_SpareExit
 			// 
-			this.button_SpareExit.Location = new System.Drawing.Point(481, 331);
+			this.button_SpareExit.Location = new System.Drawing.Point(537, 406);
 			this.button_SpareExit.Name = "button_SpareExit";
 			this.button_SpareExit.Size = new System.Drawing.Size(75, 23);
 			this.button_SpareExit.TabIndex = 19;
@@ -98,7 +98,7 @@ namespace EqCard.Forms
 			// label1
 			// 
 			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(13, 243);
+			this.label1.Location = new System.Drawing.Point(16, 269);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(57, 13);
 			this.label1.TabIndex = 23;
@@ -107,7 +107,7 @@ namespace EqCard.Forms
 			// label2
 			// 
 			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(13, 273);
+			this.label2.Location = new System.Drawing.Point(18, 301);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(60, 13);
 			this.label2.TabIndex = 24;
@@ -116,7 +116,7 @@ namespace EqCard.Forms
 			// label3
 			// 
 			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(16, 311);
+			this.label3.Location = new System.Drawing.Point(18, 336);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(114, 13);
 			this.label3.TabIndex = 25;
@@ -125,7 +125,7 @@ namespace EqCard.Forms
 			// label4
 			// 
 			this.label4.AutoSize = true;
-			this.label4.Location = new System.Drawing.Point(16, 351);
+			this.label4.Location = new System.Drawing.Point(16, 372);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(70, 13);
 			this.label4.TabIndex = 26;
@@ -133,42 +133,42 @@ namespace EqCard.Forms
 			// 
 			// textBox_SpareName
 			// 
-			this.textBox_SpareName.Location = new System.Drawing.Point(138, 240);
+			this.textBox_SpareName.Location = new System.Drawing.Point(138, 266);
 			this.textBox_SpareName.Name = "textBox_SpareName";
-			this.textBox_SpareName.Size = new System.Drawing.Size(240, 20);
+			this.textBox_SpareName.Size = new System.Drawing.Size(341, 20);
 			this.textBox_SpareName.TabIndex = 27;
 			// 
 			// comboBox_SpareCategory
 			// 
 			this.comboBox_SpareCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.comboBox_SpareCategory.FormattingEnabled = true;
-			this.comboBox_SpareCategory.Location = new System.Drawing.Point(138, 273);
+			this.comboBox_SpareCategory.Location = new System.Drawing.Point(138, 298);
 			this.comboBox_SpareCategory.Name = "comboBox_SpareCategory";
-			this.comboBox_SpareCategory.Size = new System.Drawing.Size(240, 21);
+			this.comboBox_SpareCategory.Size = new System.Drawing.Size(341, 21);
 			this.comboBox_SpareCategory.Sorted = true;
 			this.comboBox_SpareCategory.TabIndex = 28;
 			// 
 			// numericUpDown_SpareInStorage
 			// 
-			this.numericUpDown_SpareInStorage.Location = new System.Drawing.Point(138, 311);
+			this.numericUpDown_SpareInStorage.Location = new System.Drawing.Point(138, 334);
 			this.numericUpDown_SpareInStorage.Name = "numericUpDown_SpareInStorage";
-			this.numericUpDown_SpareInStorage.Size = new System.Drawing.Size(240, 20);
+			this.numericUpDown_SpareInStorage.Size = new System.Drawing.Size(341, 20);
 			this.numericUpDown_SpareInStorage.TabIndex = 29;
 			this.numericUpDown_SpareInStorage.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
 			// 
 			// textBox_SpareComment
 			// 
-			this.textBox_SpareComment.Location = new System.Drawing.Point(138, 351);
+			this.textBox_SpareComment.Location = new System.Drawing.Point(138, 369);
 			this.textBox_SpareComment.Multiline = true;
 			this.textBox_SpareComment.Name = "textBox_SpareComment";
-			this.textBox_SpareComment.Size = new System.Drawing.Size(240, 60);
+			this.textBox_SpareComment.Size = new System.Drawing.Size(341, 60);
 			this.textBox_SpareComment.TabIndex = 30;
 			// 
 			// SpareForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(577, 432);
+			this.ClientSize = new System.Drawing.Size(624, 441);
 			this.Controls.Add(this.textBox_SpareComment);
 			this.Controls.Add(this.numericUpDown_SpareInStorage);
 			this.Controls.Add(this.comboBox_SpareCategory);

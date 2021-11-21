@@ -44,15 +44,15 @@ namespace EqCard.Forms
 			// dataGridView_SpareCategory
 			// 
 			this.dataGridView_SpareCategory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView_SpareCategory.Location = new System.Drawing.Point(16, 24);
+			this.dataGridView_SpareCategory.Location = new System.Drawing.Point(12, 12);
 			this.dataGridView_SpareCategory.Name = "dataGridView_SpareCategory";
-			this.dataGridView_SpareCategory.Size = new System.Drawing.Size(516, 269);
+			this.dataGridView_SpareCategory.Size = new System.Drawing.Size(600, 269);
 			this.dataGridView_SpareCategory.TabIndex = 2;
 			this.dataGridView_SpareCategory.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_SpareCategory_CellClick);
 			// 
 			// button_SpareCategoryEdit
 			// 
-			this.button_SpareCategoryEdit.Location = new System.Drawing.Point(440, 358);
+			this.button_SpareCategoryEdit.Location = new System.Drawing.Point(537, 348);
 			this.button_SpareCategoryEdit.Name = "button_SpareCategoryEdit";
 			this.button_SpareCategoryEdit.Size = new System.Drawing.Size(75, 23);
 			this.button_SpareCategoryEdit.TabIndex = 18;
@@ -62,7 +62,7 @@ namespace EqCard.Forms
 			// 
 			// button_SpareCategoryDelete
 			// 
-			this.button_SpareCategoryDelete.Location = new System.Drawing.Point(440, 387);
+			this.button_SpareCategoryDelete.Location = new System.Drawing.Point(537, 377);
 			this.button_SpareCategoryDelete.Name = "button_SpareCategoryDelete";
 			this.button_SpareCategoryDelete.Size = new System.Drawing.Size(75, 23);
 			this.button_SpareCategoryDelete.TabIndex = 17;
@@ -72,7 +72,7 @@ namespace EqCard.Forms
 			// 
 			// button_SpareCategoryAdd
 			// 
-			this.button_SpareCategoryAdd.Location = new System.Drawing.Point(440, 328);
+			this.button_SpareCategoryAdd.Location = new System.Drawing.Point(537, 318);
 			this.button_SpareCategoryAdd.Name = "button_SpareCategoryAdd";
 			this.button_SpareCategoryAdd.Size = new System.Drawing.Size(75, 23);
 			this.button_SpareCategoryAdd.TabIndex = 16;
@@ -82,7 +82,7 @@ namespace EqCard.Forms
 			// 
 			// button_SpareCategoryExit
 			// 
-			this.button_SpareCategoryExit.Location = new System.Drawing.Point(440, 416);
+			this.button_SpareCategoryExit.Location = new System.Drawing.Point(537, 406);
 			this.button_SpareCategoryExit.Name = "button_SpareCategoryExit";
 			this.button_SpareCategoryExit.Size = new System.Drawing.Size(75, 23);
 			this.button_SpareCategoryExit.TabIndex = 15;
@@ -93,7 +93,7 @@ namespace EqCard.Forms
 			// label2
 			// 
 			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(32, 368);
+			this.label2.Location = new System.Drawing.Point(18, 358);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(70, 13);
 			this.label2.TabIndex = 20;
@@ -102,7 +102,7 @@ namespace EqCard.Forms
 			// label1
 			// 
 			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(40, 328);
+			this.label1.Location = new System.Drawing.Point(18, 323);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(112, 13);
 			this.label1.TabIndex = 19;
@@ -110,24 +110,24 @@ namespace EqCard.Forms
 			// 
 			// textBox_SpareCategoryComment
 			// 
-			this.textBox_SpareCategoryComment.Location = new System.Drawing.Point(136, 360);
+			this.textBox_SpareCategoryComment.Location = new System.Drawing.Point(136, 349);
 			this.textBox_SpareCategoryComment.Multiline = true;
 			this.textBox_SpareCategoryComment.Name = "textBox_SpareCategoryComment";
-			this.textBox_SpareCategoryComment.Size = new System.Drawing.Size(280, 48);
+			this.textBox_SpareCategoryComment.Size = new System.Drawing.Size(357, 80);
 			this.textBox_SpareCategoryComment.TabIndex = 22;
 			// 
 			// textBox_SpareCategoryName
 			// 
-			this.textBox_SpareCategoryName.Location = new System.Drawing.Point(136, 320);
+			this.textBox_SpareCategoryName.Location = new System.Drawing.Point(136, 323);
 			this.textBox_SpareCategoryName.Name = "textBox_SpareCategoryName";
-			this.textBox_SpareCategoryName.Size = new System.Drawing.Size(280, 20);
+			this.textBox_SpareCategoryName.Size = new System.Drawing.Size(357, 20);
 			this.textBox_SpareCategoryName.TabIndex = 21;
 			// 
 			// SpareCategoryForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(573, 509);
+			this.ClientSize = new System.Drawing.Size(624, 441);
 			this.Controls.Add(this.textBox_SpareCategoryComment);
 			this.Controls.Add(this.textBox_SpareCategoryName);
 			this.Controls.Add(this.label2);

@@ -46,15 +46,15 @@ namespace EqCard.Forms
 			this.dataGridView_Location.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dataGridView_Location.Location = new System.Drawing.Point(8, 8);
 			this.dataGridView_Location.Name = "dataGridView_Location";
-			this.dataGridView_Location.Size = new System.Drawing.Size(536, 290);
+			this.dataGridView_Location.Size = new System.Drawing.Size(604, 290);
 			this.dataGridView_Location.TabIndex = 1;
 			this.dataGridView_Location.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Location_CellClick);
 			// 
 			// textBox_LocationName
 			// 
-			this.textBox_LocationName.Location = new System.Drawing.Point(120, 312);
+			this.textBox_LocationName.Location = new System.Drawing.Point(104, 320);
 			this.textBox_LocationName.Name = "textBox_LocationName";
-			this.textBox_LocationName.Size = new System.Drawing.Size(280, 20);
+			this.textBox_LocationName.Size = new System.Drawing.Size(379, 20);
 			this.textBox_LocationName.TabIndex = 2;
 			// 
 			// label1
@@ -69,7 +69,7 @@ namespace EqCard.Forms
 			// label2
 			// 
 			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(24, 352);
+			this.label2.Location = new System.Drawing.Point(16, 352);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(70, 13);
 			this.label2.TabIndex = 4;
@@ -77,15 +77,15 @@ namespace EqCard.Forms
 			// 
 			// textBox_LocationComment
 			// 
-			this.textBox_LocationComment.Location = new System.Drawing.Point(120, 352);
+			this.textBox_LocationComment.Location = new System.Drawing.Point(104, 352);
 			this.textBox_LocationComment.Multiline = true;
 			this.textBox_LocationComment.Name = "textBox_LocationComment";
-			this.textBox_LocationComment.Size = new System.Drawing.Size(280, 48);
+			this.textBox_LocationComment.Size = new System.Drawing.Size(379, 77);
 			this.textBox_LocationComment.TabIndex = 5;
 			// 
 			// button_LocationEdit
 			// 
-			this.button_LocationEdit.Location = new System.Drawing.Point(440, 350);
+			this.button_LocationEdit.Location = new System.Drawing.Point(537, 348);
 			this.button_LocationEdit.Name = "button_LocationEdit";
 			this.button_LocationEdit.Size = new System.Drawing.Size(75, 23);
 			this.button_LocationEdit.TabIndex = 14;
@@ -95,7 +95,7 @@ namespace EqCard.Forms
 			// 
 			// button_LocationDelete
 			// 
-			this.button_LocationDelete.Location = new System.Drawing.Point(440, 379);
+			this.button_LocationDelete.Location = new System.Drawing.Point(537, 377);
 			this.button_LocationDelete.Name = "button_LocationDelete";
 			this.button_LocationDelete.Size = new System.Drawing.Size(75, 23);
 			this.button_LocationDelete.TabIndex = 13;
@@ -105,7 +105,7 @@ namespace EqCard.Forms
 			// 
 			// button_LocationAdd
 			// 
-			this.button_LocationAdd.Location = new System.Drawing.Point(440, 320);
+			this.button_LocationAdd.Location = new System.Drawing.Point(537, 318);
 			this.button_LocationAdd.Name = "button_LocationAdd";
 			this.button_LocationAdd.Size = new System.Drawing.Size(75, 23);
 			this.button_LocationAdd.TabIndex = 12;
@@ -115,7 +115,7 @@ namespace EqCard.Forms
 			// 
 			// button_LocationExit
 			// 
-			this.button_LocationExit.Location = new System.Drawing.Point(440, 408);
+			this.button_LocationExit.Location = new System.Drawing.Point(537, 406);
 			this.button_LocationExit.Name = "button_LocationExit";
 			this.button_LocationExit.Size = new System.Drawing.Size(75, 23);
 			this.button_LocationExit.TabIndex = 11;
@@ -127,7 +127,7 @@ namespace EqCard.Forms
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(551, 498);
+			this.ClientSize = new System.Drawing.Size(624, 441);
 			this.Controls.Add(this.button_LocationEdit);
 			this.Controls.Add(this.button_LocationDelete);
 			this.Controls.Add(this.button_LocationAdd);

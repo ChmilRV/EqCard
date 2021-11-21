@@ -32,6 +32,7 @@ namespace EqCard
 			this.components = new System.ComponentModel.Container();
 			this.tabControl = new System.Windows.Forms.TabControl();
 			this.tabPage_EqRecordCard = new System.Windows.Forms.TabPage();
+			this.label6 = new System.Windows.Forms.Label();
 			this.button_SpareToRecCardEdit = new System.Windows.Forms.Button();
 			this.button_SpareToRecCardDelete = new System.Windows.Forms.Button();
 			this.label3 = new System.Windows.Forms.Label();
@@ -71,6 +72,7 @@ namespace EqCard
 			this.toolStripMenuItem_About = new System.Windows.Forms.ToolStripMenuItem();
 			this.button_Exit = new System.Windows.Forms.Button();
 			this.timer1 = new System.Windows.Forms.Timer(this.components);
+			this.label7 = new System.Windows.Forms.Label();
 			this.tabControl.SuspendLayout();
 			this.tabPage_EqRecordCard.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.numericUpDown_SpareCount)).BeginInit();
@@ -93,6 +95,7 @@ namespace EqCard
 			// 
 			// tabPage_EqRecordCard
 			// 
+			this.tabPage_EqRecordCard.Controls.Add(this.label6);
 			this.tabPage_EqRecordCard.Controls.Add(this.button_SpareToRecCardEdit);
 			this.tabPage_EqRecordCard.Controls.Add(this.button_SpareToRecCardDelete);
 			this.tabPage_EqRecordCard.Controls.Add(this.label3);
@@ -111,6 +114,15 @@ namespace EqCard
 			this.tabPage_EqRecordCard.Text = "Учет";
 			this.tabPage_EqRecordCard.UseVisualStyleBackColor = true;
 			this.tabPage_EqRecordCard.Enter += new System.EventHandler(this.tabPage_EqRecordCard_Enter);
+			// 
+			// label6
+			// 
+			this.label6.AutoSize = true;
+			this.label6.Location = new System.Drawing.Point(8, 21);
+			this.label6.Name = "label6";
+			this.label6.Size = new System.Drawing.Size(134, 13);
+			this.label6.TabIndex = 29;
+			this.label6.Text = "Категория оборудования";
 			// 
 			// button_SpareToRecCardEdit
 			// 
@@ -198,9 +210,9 @@ namespace EqCard
 			// 
 			this.comboBox_RecordEquipment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.comboBox_RecordEquipment.FormattingEnabled = true;
-			this.comboBox_RecordEquipment.Location = new System.Drawing.Point(8, 21);
+			this.comboBox_RecordEquipment.Location = new System.Drawing.Point(158, 18);
 			this.comboBox_RecordEquipment.Name = "comboBox_RecordEquipment";
-			this.comboBox_RecordEquipment.Size = new System.Drawing.Size(280, 21);
+			this.comboBox_RecordEquipment.Size = new System.Drawing.Size(291, 21);
 			this.comboBox_RecordEquipment.TabIndex = 2;
 			this.comboBox_RecordEquipment.SelectedIndexChanged += new System.EventHandler(this.comboBox_Equipment_SelectedIndexChanged);
 			// 
@@ -215,6 +227,7 @@ namespace EqCard
 			// 
 			// tabPage_EqRepairRecord
 			// 
+			this.tabPage_EqRepairRecord.Controls.Add(this.label7);
 			this.tabPage_EqRepairRecord.Controls.Add(this.button_RepairDelete);
 			this.tabPage_EqRepairRecord.Controls.Add(this.button_RepairEdit);
 			this.tabPage_EqRepairRecord.Controls.Add(this.textBox_RepairComment);
@@ -310,7 +323,7 @@ namespace EqCard
 			// 
 			this.comboBox_RepairEquipment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.comboBox_RepairEquipment.FormattingEnabled = true;
-			this.comboBox_RepairEquipment.Location = new System.Drawing.Point(8, 20);
+			this.comboBox_RepairEquipment.Location = new System.Drawing.Point(167, 19);
 			this.comboBox_RepairEquipment.Name = "comboBox_RepairEquipment";
 			this.comboBox_RepairEquipment.Size = new System.Drawing.Size(272, 21);
 			this.comboBox_RepairEquipment.TabIndex = 3;
@@ -453,6 +466,15 @@ namespace EqCard
 			// 
 			this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
 			// 
+			// label7
+			// 
+			this.label7.AutoSize = true;
+			this.label7.Location = new System.Drawing.Point(8, 22);
+			this.label7.Name = "label7";
+			this.label7.Size = new System.Drawing.Size(134, 13);
+			this.label7.TabIndex = 30;
+			this.label7.Text = "Категория оборудования";
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -529,6 +551,8 @@ namespace EqCard
 		private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel_Day;
 		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem_EquipmentReport;
 		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem_SpareReport;
+		private System.Windows.Forms.Label label6;
+		private System.Windows.Forms.Label label7;
 	}
 }
 

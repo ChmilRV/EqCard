@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace EqCard.Models
 {
-	//_____________________________________Категория запчасти
 	class SpareCategory
 	{
 		public int Id { get; set; }
@@ -18,8 +17,6 @@ namespace EqCard.Models
 		{
 			Spares = new List<Spare>();
 		}
-
-
 
 	}
 }

@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace EqCard.Models
 {
-	//_______________________________Оборудование
 	class Equipment
 	{
 		public int Id { get; set; }
@@ -15,10 +14,6 @@ namespace EqCard.Models
 
 		public int LocationId { get; set; }
 		public Location Location { get; set; }
-
-
-
-		// список запчастей оборудования
 		public List<Spare> Spares { get; set; } 
 
 		public List<EqRepairRecord> EqRepairRecords { get; set; }

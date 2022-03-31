@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace EqCard.Models
 {
-	//_______________________________Учетная карточка оборудования
 	class EqRepairRecord
 	{
 		public int Id { get; set; }
